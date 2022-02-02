@@ -1,80 +1,204 @@
-# Copyright (C) 2013 Simple Revision Control
-# This file is distributed under the same license as the Simple Revision Control package.
+# Copyright (C) 2022 Marcin Pietrzak
+# This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Simple Revision Control trunk\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/simple-revision-control\n"
-"POT-Creation-Date: 2013-08-13 13:42:58+00:00\n"
+"Project-Id-Version: Simple Revision Control PLUGIN_VERSION\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/simple-revision-control\n"
+"POT-Creation-Date: 2022-02-02 13:59:29+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Marcin Pietrzak <marcin@iworks.pl>\n"
-"Language-Team: Marcin Pietrzak <marcin@iworks.pl>\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: etc/options.php:16
-msgid "Number of revisions"
+#: etc/options.php:12
+msgid "Revisions configuration"
 msgstr ""
 
-#: etc/options.php:17
-msgid ""
-"Set <b>0</b> to unlimited revisions, set <b>1</b> to no revisions or set any "
-"other number."
-msgstr ""
-
-#: etc/options.php:23
-msgid "Post"
-msgstr ""
-
-#: etc/options.php:31
-msgid "Page"
-msgstr ""
-
-#: etc/options.php:54
-msgid "Custom Post Types"
-msgstr ""
-
-#: includes/class-iworks-options.php:92
-msgid "An error occurred while getting the configuration."
-msgstr ""
-
-#: includes/class-iworks-options.php:502
-msgid "Save Changes"
-msgstr ""
-
-#: includes/class-simple-revision-control.php:79
-msgid "Settings"
-msgstr ""
-
-#: includes/class-simple-revision-control.php:81
-msgid "Donate"
-msgstr ""
-
-#: includes/class-simple-revision-control.php:89
-#: includes/class-simple-revision-control.php:90
+#: etc/options.php:13
 msgid "Revisions"
 msgstr ""
 
-#. #-#-#-#-#  simple-revision-control.pot (Simple Revision Control trunk)  #-#-#-#-#
+#: etc/options.php:18
+msgid "Number of revisions"
+msgstr ""
+
+#: etc/options.php:19
+msgid ""
+"Set <b>0</b> to unlimited revisions, set <b>1</b> to no revisions or set "
+"any other number."
+msgstr ""
+
+#: etc/options.php:25
+msgid "Post"
+msgstr ""
+
+#: etc/options.php:33
+msgid "Page"
+msgstr ""
+
+#: etc/options.php:40 etc/options.php:108
+msgid "We are waiting for your message"
+msgstr ""
+
+#: etc/options.php:46
+msgid "I love what I do!"
+msgstr ""
+
+#: etc/options.php:69
+msgid "Custom Post Types"
+msgstr ""
+
+#: etc/options.php:92
+msgid "Below are some links to help spread this plugin to other users"
+msgstr ""
+
+#: etc/options.php:94
+msgid "Give it a five stars on WordPress.org"
+msgstr ""
+
+#: etc/options.php:95
+msgid "Link to it so others can easily find it"
+msgstr ""
+
+#: etc/options.php:110
+msgid "WordPress Help Forum"
+msgstr ""
+
+#: includes/iworks/class-simple-revision-control.php:73
+#: includes/iworks/rate/rate.php:118
+msgid "Settings"
+msgstr ""
+
+#: includes/iworks/options/options.php:251
+msgid "An error occurred while getting the configuration."
+msgstr ""
+
+#: includes/iworks/options/options.php:752
+#: includes/iworks/options/options.php:1753
+msgid "Select Image"
+msgstr ""
+
+#: includes/iworks/options/options.php:757
+msgid "Delete image"
+msgstr ""
+
+#: includes/iworks/options/options.php:843
+msgid "Save Changes"
+msgstr ""
+
+#: includes/iworks/options/options.php:1647
+msgid "Country"
+msgstr ""
+
+#: includes/iworks/options/options.php:1648
+msgid "City"
+msgstr ""
+
+#: includes/iworks/options/options.php:1649
+msgid "Street"
+msgstr ""
+
+#: includes/iworks/options/options.php:1650
+msgid "ZIP code"
+msgstr ""
+
+#: includes/iworks/options/options.php:1806
+msgid "OFF"
+msgstr ""
+
+#: includes/iworks/options/options.php:1807
+msgid "ON"
+msgstr ""
+
+#: includes/iworks/rate/rate.php:124
+#: includes/iworks/rate/templates/thanks.php:28
+msgid "Provide us a coffee"
+msgstr ""
+
+#: includes/iworks/rate/templates/thanks.php:17
+msgid "Thank you for using our plugin %s!"
+msgstr ""
+
+#: includes/iworks/rate/templates/thanks.php:20
+#. translators: %1$s: open anchor tag, %2$s: close anchor tag
+msgid ""
+"Please let us know what you think about our plugin. It is important that we "
+"can develop this tool. Thank you for all the ratings, reviews and donates. "
+"If you have a technical problem, please before you add a review %1$scheck "
+"our FAQ%2$s or contact us if you did not find help there. We will try to "
+"help you!"
+msgstr ""
+
+#: includes/iworks/rate/templates/thanks.php:24
+#: includes/iworks/rate/templates/widgets/support.php:23
+msgid "Get help"
+msgstr ""
+
+#: includes/iworks/rate/templates/thanks.php:26
+#: includes/iworks/rate/templates/widgets/support.php:33
+msgid "Add review"
+msgstr ""
+
+#: includes/iworks/rate/templates/thanks.php:30
+msgid "I added review, do not show again"
+msgstr ""
+
+#: includes/iworks/rate/templates/widgets/donate.php:1
+msgid ""
+"However, working on plugins and technical support requires many hours of "
+"work. If you want to appreciate it, you can provide me a coffee."
+msgstr ""
+
+#: includes/iworks/rate/templates/widgets/donate.php:2
+msgid ""
+"If every plugin user did it, I could devote myself fully to working on this "
+"plugin. Thanks everyone!"
+msgstr ""
+
+#: includes/iworks/rate/templates/widgets/donate.php:3
+msgid "Provide me a coffee"
+msgstr ""
+
+#: includes/iworks/rate/templates/widgets/support.php:4
+msgid ""
+"Do you have a technical problem? Please contact us. We will be happy to "
+"help you. Or maybe you have an idea for a new feature? Please let us know "
+"about it by filling the support form. We will try to add it!"
+msgstr ""
+
+#: includes/iworks/rate/templates/widgets/support.php:13
+#. translators: %1$s: open anchor tag, %2$s: close anchor tag, %3$s: open
+#. anchor tag, %4$s: close anchor tag
+msgid ""
+"Please %1$scheck our FAQ%2$s before adding a thread with technical problem. "
+"If you do not find help there, %3$scheck support forum%4$s for similar "
+"problems."
+msgstr ""
+
+#: includes/iworks/rate/templates/widgets/support.php:28
+msgid ""
+"Do you like our plugin? Could you rate him? Please let us know what you "
+"think about our plugin. It is important that we can develop this tool. "
+"Thank you for all the ratings, reviews and donates."
+msgstr ""
+
 #. Plugin Name of the plugin/theme
-#: includes/class-simple-revision-control.php:103
 msgid "Simple Revision Control"
-msgstr ""
-
-#: includes/class-simple-revision-control.php:115
-msgid "Need Assistance?"
-msgstr ""
-
-#: includes/class-simple-revision-control.php:117
-msgid "Problems? The links bellow can be very helpful to you"
-msgstr ""
-
-#: includes/class-simple-revision-control.php:119
-msgid "http://wordpress.org/tags/simple-revision-control"
-msgstr ""
-
-#: includes/class-simple-revision-control.php:119
-msgid "Wordpress Help Forum"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -93,4 +217,24 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "http://iworks.pl/"
+msgstr ""
+
+#: etc/options.php:95
+msgctxt "plugin home page on WordPress.org"
+msgid "https://wordpress.org/plugins/simple-revision-control/"
+msgstr ""
+
+#: etc/options.php:110
+msgctxt "link to support forum on WordPress.org"
+msgid "https://wordpress.org/support/plugin/simple-revision-control/"
+msgstr ""
+
+#: includes/iworks/rate/rate.php:399
+msgctxt "plugins home"
+msgid "https://wordpress.org/plugins/%s"
+msgstr ""
+
+#: includes/iworks/rate/rate.php:405
+msgctxt "plugins support home"
+msgid "https://wordpress.org/support/plugin/%s"
 msgstr ""

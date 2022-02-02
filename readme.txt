@@ -3,8 +3,8 @@ Contributors: iworks
 Donate link: http://iworks.pl/donate/simple-revision-control.php
 Tags: revision, revisions, post, page, custom post type
 Requires at least: 5.0
-Tested up to: 5.7
-Stable tag: 1.3.4
+Tested up to: 5.9
+Stable tag: PLUGIN_VERSION
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,11 @@ Simple Revision Control plugin will work on websites in the following languages:
 1. Simple Revision Control set up with CPT.
 
 == Changelog ==
+
+= 2.0.0 (2022-02-02) =
+- Refactored whole plugin.
+* Updated iWorks Options to 2.8.0.
+* Updated iWorks Rate to 2.0.6.
 
 = 1.3.4 (2021-06-16) =
 * Updated iWorks Options to 2.6.9.

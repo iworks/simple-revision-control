@@ -392,10 +392,9 @@ module.exports = function(grunt) {
 
     grunt.registerTask('release', 'Generating release copy', function() {
         grunt.task.run('clean');
-        grunt.task.run('js');
-        grunt.task.run('css');
+        // grunt.task.run('js');
+        // grunt.task.run('css');
         grunt.task.run('makepot');
-
         //		grunt.task.run( 'po2mo');
         grunt.task.run('copy');
         grunt.task.run('replace');
