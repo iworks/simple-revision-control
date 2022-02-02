@@ -1,6 +1,6 @@
 === Simple Revision Control ===
 Contributors: iworks
-Donate link: http://iworks.pl/donate/simple-revision-control.php
+Donate link: https://ko-fi.com/iworks?utm_source=simple-revision-control&utm_medium=readme-donate
 Tags: revision, revisions, post, page, custom post type
 Requires at least: 5.0
 Tested up to: 5.9
@@ -43,9 +43,7 @@ You can setup number of revisions only for post types witch supports `revisions`
 
 = My website is not in English, will simple-revision-control work? =
 
-Simple Revision Control plugin will work on websites in the following languages:
-
-* Polish
+Simple Revision Control plugin will work on websites in any language.
 
 == Screenshots ==
 
