@@ -1,0 +1,96 @@
+# Copyright (C) 2013 Simple Revision Control
+# This file is distributed under the same license as the Simple Revision Control package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Revision Control trunk\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/simple-revision-control\n"
+"POT-Creation-Date: 2013-08-13 13:42:58+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Marcin Pietrzak <marcin@iworks.pl>\n"
+"Language-Team: Marcin Pietrzak <marcin@iworks.pl>\n"
+
+#: etc/options.php:16
+msgid "Number of revisions"
+msgstr ""
+
+#: etc/options.php:17
+msgid ""
+"Set <b>0</b> to unlimited revisions, set <b>1</b> to no revisions or set any "
+"other number."
+msgstr ""
+
+#: etc/options.php:23
+msgid "Post"
+msgstr ""
+
+#: etc/options.php:31
+msgid "Page"
+msgstr ""
+
+#: etc/options.php:54
+msgid "Custom Post Types"
+msgstr ""
+
+#: includes/class-iworks-options.php:92
+msgid "An error occurred while getting the configuration."
+msgstr ""
+
+#: includes/class-iworks-options.php:502
+msgid "Save Changes"
+msgstr ""
+
+#: includes/class-simple-revision-control.php:79
+msgid "Settings"
+msgstr ""
+
+#: includes/class-simple-revision-control.php:81
+msgid "Donate"
+msgstr ""
+
+#: includes/class-simple-revision-control.php:89
+#: includes/class-simple-revision-control.php:90
+msgid "Revisions"
+msgstr ""
+
+#. #-#-#-#-#  simple-revision-control.pot (Simple Revision Control trunk)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: includes/class-simple-revision-control.php:103
+msgid "Simple Revision Control"
+msgstr ""
+
+#: includes/class-simple-revision-control.php:115
+msgid "Need Assistance?"
+msgstr ""
+
+#: includes/class-simple-revision-control.php:117
+msgid "Problems? The links bellow can be very helpful to you"
+msgstr ""
+
+#: includes/class-simple-revision-control.php:119
+msgid "http://wordpress.org/tags/simple-revision-control"
+msgstr ""
+
+#: includes/class-simple-revision-control.php:119
+msgid "Wordpress Help Forum"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://iworks.pl/simple-revision-control"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Simple Revision Control is a plugin for WordPress which gives the user "
+"simple control over the Revision functionality."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Marcin Pietrzak"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://iworks.pl/"
+msgstr ""
