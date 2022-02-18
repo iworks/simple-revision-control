@@ -1,32 +1,24 @@
 <?php
-/*
-Plugin Name: Simple Revision Control
-Plugin URI: http://iworks.pl/simple-revision-control
-description: Simple Revision Control is a plugin for WordPress which gives the user simple control over the Revision functionality.
-Version: PLUGIN_VERSION
-Author: Marcin Pietrzak
-Author URI: http://iworks.pl/
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
-
-/*
-
-Copyright 2013-PLUGIN_TILL_YEAR Marcin Pietrzak (marcin@iworks.pl)
-
-this program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License, version 2, as
-published by the Free Software Foundation.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
+/**
+ * PLUGIN_TITLE
+ *
+ * @package           PLUGIN_NAME
+ * @author            AUTHOR_NAME
+ * @copyright         2013-PLUGIN_TILL_YEAR Marcin Pietrzak (marcin@iworks.pl)
+ * @license           GPL-2.0-or-later
+ *
+ * @wordpress-plugin
+ * Plugin Name:       Simple Revision Control
+ * Plugin URI:        PLUGIN_URI
+ * Description:       PLUGIN_DESCRIPTION
+ * Version:           PLUGIN_VERSION
+ * Requires at least: PLUGIN_REQUIRES_WORDPRESS
+ * Requires PHP:      PLUGIN_REQUIRES_PHP
+ * Author:            AUTHOR_NAME
+ * Author URI:        AUTHOR_URI
+ * Text Domain:       og
+ * License:           GPL v2 or later
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
 if ( ! defined( 'WPINC' ) ) {
@@ -104,8 +96,8 @@ function get_simple_revision_control_options() {
 /**
  * install & uninstall
  */
-register_activation_hook( __FILE__, 'simple_revision_control_activate' );
-register_deactivation_hook( __FILE__, 'simple_revision_control_deactivate' );
+// register_activation_hook( __FILE__, 'simple_revision_control_activate' );
+// register_deactivation_hook( __FILE__, 'simple_revision_control_deactivate' );
 
 /**
  * Ask for vote

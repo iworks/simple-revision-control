@@ -1,8 +1,8 @@
-=== Simple Revision Control ===
+=== PLUGIN_TITLE ===
 Contributors: iworks
 Donate link: https://ko-fi.com/iworks?utm_source=simple-revision-control&utm_medium=readme-donate
 Tags: revision, revisions, post, page, custom post type
-Requires at least: 5.0
+Requires at least: PLUGIN_REQUIRES_WORDPRESS
 Tested up to: 5.9
 Stable tag: PLUGIN_VERSION
 License: GPLv2 or later
@@ -11,7 +11,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Simple Revision Control is a plugin for WordPress which gives the user simple control over the [Revisions](https://wordpress.org/support/article/revisions/) functionality. Including custom post types.
 
 If you are able to edit `wp-config.php` file or you want to have only one number of revisions for all post types, then please consider do not install this plugin, instead just edit `wp-config.php` file.
-
 
 == Description ==
 
@@ -51,6 +50,10 @@ Simple Revision Control plugin will work on websites in any language.
 1. Simple Revision Control set up with CPT.
 
 == Changelog ==
+
+= 2.0.1 (2022-02-18) =
+* Updated iWorks Options to 2.8.1.
+* Updated iWorks Rate to 2.1.0.
 
 = 2.0.0 (2022-02-02) =
 - Refactored whole plugin.
