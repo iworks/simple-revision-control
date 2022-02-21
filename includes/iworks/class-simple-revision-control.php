@@ -32,6 +32,11 @@ class iWorks_Simple_Revision_Control {
 	private $capability;
 	private $dir;
 
+	/**
+	 * DB VERSION
+	 */
+	private $db_version = 1;
+
 	public function __construct() {
 		/**
 		 * static settings
@@ -41,6 +46,7 @@ class iWorks_Simple_Revision_Control {
 		/**
 		 * WordPress Hooks
 		 */
+		add_action( 'init', array( $this, 'check_db_version' ) );
 		add_action( 'init', array( $this, 'change_post_type_revision_support' ), PHP_INT_MAX );
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_filter( 'wp_revisions_to_keep', array( $this, 'wp_revisions_to_keep' ), PHP_INT_MAX, 2 );
@@ -282,12 +288,50 @@ class iWorks_Simple_Revision_Control {
 	public function change_post_type_revision_support() {
 		$config = $this->options->get_options_by_group( 'post_type_mode' );
 		foreach ( $config as $one ) {
-			if ( 'off' === $this->options->get_option( $one['name'] ) ) {
+
+			$value = $this->options->get_option( $one['name'] );
+			// l($value);
+
+			if ( 'off' === $value ) {
 				remove_post_type_support( $one['post_type'], 'revisions' );
 			} else {
 				add_post_type_support( $one['post_type'], 'revisions' );
 			}
 		}
 	}
+
+	public function check_db_version() {
+		$db_version = intval( $this->options->get_option( 'db_version' ) );
+		/**
+		 * version 1
+		 */
+		if ( empty( $db_version ) || $this->db_version > $db_version ) {
+			$config = $this->options->get_options_by_group( 'post_type_mode' );
+			foreach ( $config as $one ) {
+				$option_name = $this->options->get_option_name( $one['post_type'] );
+				$value       = get_option( $option_name );
+				/**
+				 * Old "0" - unlimited
+				 */
+				if ( '0' === $value ) {
+					$this->options->update_option( $one['name'], 'unlimited' );
+					continue;
+				}
+				/**
+				 * old "1" - rutn off versions
+				 */
+				if ( '1' === $value ) {
+					$this->options->update_option( $one['name'], 'off' );
+					continue;
+				}
+				$value = intval( $value );
+				if ( 1 < $value ) {
+					$this->options->update_option( $one['name'], 'custom' );
+				}
+			}
+			$this->options->update_option( 'db_version', $this->db_version );
+		}
+	}
+
 }
 
