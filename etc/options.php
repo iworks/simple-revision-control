@@ -7,12 +7,16 @@ function simple_revision_control_options() {
 	 * main settings
 	 */
 	$options['index'] = array(
-		'use_tabs'   => true,
-		'version'    => 'PLUGIN_VERSION',
-		'page_title' => __( 'Revisions configuration', 'simple-revision-control' ),
-		'menu_title' => __( 'Revisions', 'simple-revision-control' ),
-		'menu'       => 'options',
-		'options'    => array(
+		'use_tabs'        => true,
+		'version'         => 'PLUGIN_VERSION',
+		'page_title'      => __( 'Revisions configuration', 'simple-revision-control' ),
+		'menu_title'      => __( 'Revisions', 'simple-revision-control' ),
+		'menu'            => 'options',
+		'enqueue_scripts' => array(
+			'simple-revision-control-admin',
+		),
+		'enqueue_styles'  => array(),
+		'options'         => array(
 			array(
 				'type'  => 'heading',
 				'label' => __( 'Revisions', 'simple-revision-control' ),
@@ -37,13 +41,12 @@ function simple_revision_control_options() {
 				'post_type' => 'post',
 			),
 			array(
-				'name'        => 'post',
-				'class'       => 'small-text',
-				'type'        => 'number',
-				'default'     => 3,
-				'min'         => 1,
-				'group'       => 'post_type',
-				'description' => __( 'It works only when option above is set to "Custom number of revisions".', 'simple-revision-control' ),
+				'name'    => 'post',
+				'class'   => 'small-text',
+				'type'    => 'number',
+				'default' => 3,
+				'min'     => 1,
+				'group'   => 'post_type',
 			),
 			array(
 				'name'      => 'page_mode',
@@ -65,13 +68,12 @@ function simple_revision_control_options() {
 				'post_type' => 'page',
 			),
 			array(
-				'name'        => 'page',
-				'class'       => 'small-text',
-				'type'        => 'number',
-				'default'     => 3,
-				'min'         => 1,
-				'group'       => 'post_type',
-				'description' => __( 'It works only when option above is set to "Custom number of revisions".', 'simple-revision-control' ),
+				'name'    => 'page',
+				'class'   => 'small-text',
+				'type'    => 'number',
+				'default' => 3,
+				'min'     => 1,
+				'group'   => 'post_type',
 			),
 			array(
 				'type'  => 'heading',
@@ -83,7 +85,7 @@ function simple_revision_control_options() {
 				'filter' => 'simple_revision_control_utilization',
 			),
 		),
-		'metaboxes'  => array(
+		'metaboxes'       => array(
 			'assistance' => array(
 				'title'    => __( 'We are waiting for your message', 'simple-revision-control' ),
 				'callback' => 'simple_revision_control_options_need_assistance',

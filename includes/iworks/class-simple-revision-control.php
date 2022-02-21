@@ -31,21 +31,35 @@ class iWorks_Simple_Revision_Control {
 	private $options;
 	private $capability;
 	private $dir;
+	private $base;
 
 	/**
 	 * DB VERSION
 	 */
-	private $db_version = 1;
+	private $db_version = 210;
+
+	/**
+	 * Plugin version
+	 */
+	private $version = 'PLUGIN_VERSION';
+
+	/**
+	 * debug
+	 */
+	private $debug = false;
 
 	public function __construct() {
 		/**
 		 * static settings
 		 */
-		$this->dir        = basename( dirname( dirname( dirname( __FILE__ ) ) ) );
+		$this->base       = dirname( dirname( __FILE__ ) );
+		$this->dir        = basename( dirname( $this->base ) );
 		$this->capability = apply_filters( 'simple_revision_control_capability', 'manage_options' );
+		$this->debug      = defined( 'WP_DEBUG' ) && WP_DEBUG;
 		/**
 		 * WordPress Hooks
 		 */
+		add_action( 'init', array( $this, 'register_assets' ), 0 );
 		add_action( 'init', array( $this, 'check_db_version' ) );
 		add_action( 'init', array( $this, 'change_post_type_revision_support' ), PHP_INT_MAX );
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
@@ -63,6 +77,23 @@ class iWorks_Simple_Revision_Control {
 		 * iWorks Rate Class
 		 */
 		add_filter( 'iworks_rate_notice_logo_style', array( $this, 'filter_plugin_logo' ), 10, 2 );
+	}
+
+	/**
+	 * register styles
+	 *
+	 * @since 2.1.0
+	 */
+	public function register_assets() {
+		$filename = sprintf( '/assets/scripts/admin%s.js', $this->debug ? '' : '.min' );
+		$filepath = sprintf( '%s%s', dirname( $this->base ), $filename );
+		$file     = plugins_url( $filename, $this->base );
+		wp_register_script(
+			'simple-revision-control-admin',
+			$file,
+			array( 'jquery' ),
+			$this->debug ? filemtime( $filepath ) : $this->version
+		);
 	}
 
 	public function wp_revisions_to_keep( $num, $post ) {
@@ -187,7 +218,7 @@ class iWorks_Simple_Revision_Control {
 			 * get all ids
 			 */
 			$args         = array(
-				'post_type' => $post_type['name'],
+				'post_type' => $post_type['post_type'],
 				'nopaging'  => true,
 				'fields'    => 'ids',
 			);
@@ -201,7 +232,7 @@ class iWorks_Simple_Revision_Control {
 				);
 				$p   = $query->posts;
 				array_unshift( $p, 'revision' );
-				array_push( $p, $one['value'] );
+				array_push( $p, $one['limit'] );
 				$query         = $wpdb->prepare( $sql, $p );
 				$result        = $wpdb->get_results( $query, ARRAY_A );
 				$one['extend'] = count( $result );
@@ -211,12 +242,10 @@ class iWorks_Simple_Revision_Control {
 		/**
 		 * print
 		 */
-
 		$content  = '<table class="striped widefat fixed">';
 		$content .= '<thead>';
 		$content .= '<tr>';
 		$content .= sprintf( '<td>%s</td>', esc_html__( 'Post type name', 'simple-revision-control' ) );
-		$content .= sprintf( '<td>%s</td>', esc_html__( 'Status', 'simple-revision-control' ) );
 		$content .= sprintf( '<td>%s</td>', esc_html__( 'Info', 'simple-revision-control' ) );
 		$content .= sprintf( '<td>%s</td>', esc_html__( 'Actions', 'simple-revision-control' ) );
 		$content .= '</tr>';
@@ -224,60 +253,75 @@ class iWorks_Simple_Revision_Control {
 		foreach ( $print as $one ) {
 			$content .= '<tr>';
 			$content .= sprintf( '<td>%s</td>', $one['th'] );
-			if ( 'custom' === $one['value'] ) {
-				$content .= sprintf( '<td>%s</td>', sprintf( __( 'Custom: %d', 'simple-revision-control' ), $one['limit'] ) );
-				l( $one );
-			} else {
-				$content .= sprintf( '<td>%s</td>', $post_types[0]['options'][ $one['value'] ]['label'] );
-			}
-
-			if ( 0 === $one['value'] ) {
+			/**
+			 * third column: info
+			 */
+			switch ( $one['value'] ) {
+				case 'off':
 					$content .= sprintf(
-						'<td colspan="2">%s</td>',
-						esc_html__( 'There is no limit for this post type.', 'simple-revision-control' )
+						'<td>%s</td>',
+						esc_html__( 'This post type does not supports revisions.', 'simple-revision-control' )
 					);
-			} else {
-				if ( isset( $one['extend'] ) && 0 < $one['extend'] ) {
-					$content .= sprintf(
-						'<td><span class="wp-ui-text-notification">%s</span></td>',
-						esc_html(
-							sprintf(
-								_n(
-									'There is %2$s with more than one revision.',
-									'There is %2$s with more than %1$d revisions.',
-									$one['value'],
-									'simple-revision-control'
-								),
-								$one['value'],
+					$content .= '<td>&mdash;</td>';
+					break;
+				case 'custom':
+					if ( isset( $one['extend'] ) && 0 < $one['extend'] ) {
+						$content .= sprintf(
+							'<td><span class="wp-ui-text-notification">%s</span></td>',
+							esc_html(
 								sprintf(
 									_n(
-										'one entry',
-										'%d entries',
-										$one['extend'],
+										'There is %2$s with more than one revision.',
+										'There is %2$s with more than %1$d revisions.',
+										$one['limit'],
 										'simple-revision-control'
 									),
-									$one['extend']
+									$one['limit'],
+									sprintf(
+										_n(
+											'one entry',
+											'%d entries',
+											$one['extend'],
+											'simple-revision-control'
+										),
+										$one['extend']
+									)
 								)
 							)
-						)
-					);
-				} else {
-					$content .= sprintf(
-						'<td colspan="2">%s</td>',
-						esc_html(
-							sprintf(
-								_n(
-									'There is no entries with more than one revision.',
-									'There is no entries with more than %1$d revisions.',
-									$one['value'],
-									'simple-revision-control'
-								),
-								$one['value']
+						);
+						$content .= sprintf(
+							'<td><a href="#" class="button delete">%s</a></td>',
+							__( 'Delete revisions', 'simple-revision-control' )
+						);
+					} else {
+						$content .= sprintf(
+							'<td>%s</td>',
+							esc_html(
+								sprintf(
+									_n(
+										'There is no entries with more than one revision.',
+										'There is no entries with more than %1$d revisions.',
+										$one['limit'],
+										'simple-revision-control'
+									),
+									$one['limit']
+								)
 							)
-						)
+						);
+						$content .= '<td>&mdash;</td>';
+					}
+					break;
+				case 'unlimited':
+					$content .= sprintf(
+						'<td>%s</td>',
+						esc_html__( 'There is no limit for this post type.', 'simple-revision-control' )
 					);
-				}
+					$content .= '<td>&mdash;</td>';
+					break;
 			}
+			/**
+			 * close tr
+			 */
 			$content .= '</tr>';
 		}
 		$content .= '</tbody>';
@@ -285,13 +329,15 @@ class iWorks_Simple_Revision_Control {
 		return $content;
 	}
 
+	/**
+	 * Change post type support, depend on settings
+	 *
+	 * @since 2.1.0
+	 */
 	public function change_post_type_revision_support() {
 		$config = $this->options->get_options_by_group( 'post_type_mode' );
 		foreach ( $config as $one ) {
-
 			$value = $this->options->get_option( $one['name'] );
-			// l($value);
-
 			if ( 'off' === $value ) {
 				remove_post_type_support( $one['post_type'], 'revisions' );
 			} else {
@@ -303,7 +349,7 @@ class iWorks_Simple_Revision_Control {
 	public function check_db_version() {
 		$db_version = intval( $this->options->get_option( 'db_version' ) );
 		/**
-		 * version 1
+		 * version 210
 		 */
 		if ( empty( $db_version ) || $this->db_version > $db_version ) {
 			$config = $this->options->get_options_by_group( 'post_type_mode' );
