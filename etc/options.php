@@ -1,38 +1,86 @@
 <?php
 
 function simple_revision_control_options() {
-	$simple_revision_control_options = array();
+	$options = array();
 
 	/**
 	 * main settings
 	 */
-	$simple_revision_control_options['index'] = array(
-		'use_tabs'   => false,
+	$options['index'] = array(
+		'use_tabs'   => true,
 		'version'    => 'PLUGIN_VERSION',
 		'page_title' => __( 'Revisions configuration', 'simple-revision-control' ),
 		'menu_title' => __( 'Revisions', 'simple-revision-control' ),
 		'menu'       => 'options',
 		'options'    => array(
 			array(
-				'type'        => 'heading',
-				'label'       => __( 'Number of revisions', 'simple-revision-control' ),
-				'description' => __( 'Set <b>0</b> to unlimited revisions, set <b>1</b> to no revisions or set any other number.', 'simple-revision-control' ),
+				'type'  => 'heading',
+				'label' => __( 'Revisions', 'simple-revision-control' ),
 			),
 			array(
-				'name'    => 'post',
-				'class'   => 'small-text',
-				'type'    => 'number',
-				'th'      => __( 'Post', 'simple-revision-control' ),
-				'default' => 0,
-				'min'     => 0,
+				'name'      => 'post_mode',
+				'type'      => 'radio',
+				'th'        => __( 'Post', 'simple-revision-control' ),
+				'default'   => 'unlimited',
+				'options'   => array(
+					'unlimited' => array(
+						'label' => __( 'Unlimited revisions', 'simple-revision-control' ),
+					),
+					'off'       => array(
+						'label' => __( 'No revisions', 'simple-revision-control' ),
+					),
+					'custom'    => array(
+						'label' => __( 'Custom number of revisions', 'simple-revision-control' ),
+					),
+				),
+				'group'     => 'post_type_mode',
+				'post_type' => 'post',
 			),
 			array(
-				'name'    => 'page',
-				'class'   => 'small-text',
-				'type'    => 'number',
-				'th'      => __( 'Page', 'simple-revision-control' ),
-				'default' => 0,
-				'min'     => 0,
+				'name'        => 'post',
+				'class'       => 'small-text',
+				'type'        => 'number',
+				'default'     => 3,
+				'min'         => 1,
+				'group'       => 'post_type',
+				'description' => __( 'It works only when option above is set to "Custom number of revisions".', 'simple-revision-control' ),
+			),
+			array(
+				'name'      => 'page_mode',
+				'type'      => 'radio',
+				'th'        => __( 'Page', 'simple-revision-control' ),
+				'default'   => 'unlimited',
+				'options'   => array(
+					'unlimited' => array(
+						'label' => __( 'Unlimited revisions', 'simple-revision-control' ),
+					),
+					'off'       => array(
+						'label' => __( 'No revisions', 'simple-revision-control' ),
+					),
+					'custom'    => array(
+						'label' => __( 'Custom number of revisions', 'simple-revision-control' ),
+					),
+				),
+				'group'     => 'post_type_mode',
+				'post_type' => 'page',
+			),
+			array(
+				'name'        => 'page',
+				'class'       => 'small-text',
+				'type'        => 'number',
+				'default'     => 3,
+				'min'         => 1,
+				'group'       => 'post_type',
+				'description' => __( 'It works only when option above is set to "Custom number of revisions".', 'simple-revision-control' ),
+			),
+			array(
+				'type'  => 'heading',
+				'label' => __( 'Info & Tools', 'simple-revision-control' ),
+			),
+			array(
+				'type'   => 'special',
+				'th'     => __( 'Data', 'simple-revision-control' ),
+				'filter' => 'simple_revision_control_utilization',
 			),
 		),
 		'metaboxes'  => array(
@@ -50,36 +98,7 @@ function simple_revision_control_options() {
 			),
 		),
 	);
-	return simple_revision_control_add_custom_post_types_to_options( $simple_revision_control_options, 'index' );
-}
-
-function simple_revision_control_add_custom_post_types_to_options( $options, $options_group ) {
-	 $custom_post_types = get_post_types( array( '_builtin' => false ), 'object' );
-	if ( empty( $custom_post_types ) ) {
-		return $options;
-	}
-	$header = true;
-	foreach ( $custom_post_types as $name => $post_type ) {
-		if ( ! post_type_supports( $name, 'revisions' ) ) {
-			continue;
-		}
-		if ( $header ) {
-			$options[ $options_group ]['options'][] = array(
-				'type'  => 'heading',
-				'label' => __( 'Custom Post Types', 'simple-revision-control' ),
-			);
-		}
-		$header                                 = false;
-		$options[ $options_group ]['options'][] = array(
-			'name'    => $name,
-			'class'   => 'small-text',
-			'type'    => 'number',
-			'th'      => $post_type->label,
-			'default' => 0,
-			'min'     => 0,
-		);
-	}
-	return $options;
+	return apply_filters( 'iworks_plugin_get_options', $options, 'simple-revision-control' );
 }
 
 function simple_revision_control_options_loved_this_plugin( $iworks_iworks_seo_improvements ) {
