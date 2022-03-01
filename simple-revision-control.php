@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * static options
  */
-define( 'SIMPLE_REVISION_CONTROL_VERSION', 'trunk' );
+define( 'SIMPLE_REVISION_CONTROL_VERSION', 'PLUGIN_VERSION' );
 define( 'SIMPLE_REVISION_CONTROL_PREFIX', 'simple_revision_control_' );
 
 // require_once dirname(__FILE__).'/includes/common.php';

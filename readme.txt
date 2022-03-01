@@ -5,10 +5,11 @@ Tags: revision, revisions, post, page, custom post type
 Requires at least: PLUGIN_REQUIRES_WORDPRESS
 Tested up to: 6.0
 Stable tag: PLUGIN_VERSION
+Requires PHP: PLUGIN_REQUIRES_PHP
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Simple Revision Control is a plugin for WordPress which gives the user simple control over the [Revisions](https://wordpress.org/support/article/revisions/) functionality. Including custom post types.
+PLUGIN_TAGLINE
 
 You can also delete all unwanted revisions at all.
 
@@ -49,6 +50,7 @@ You can set up a number of revisions by post type. Setting in `wp-config.php` fi
 = 2.1.0 (2022-03-01) =
 * Added ability to remove revisions - depend on configuration.
 * Added ability to turn on revisions for post types without revisions.
+* Added filter `iworks_plugin_get_options` to allow to change plugin base configuration.
 * Improved UX on configuration screen.
 * Updated iWorks Options to 2.8.1.
 * Updated iWorks Rate to 2.1.0.

@@ -67,14 +67,14 @@ class iWorks_Simple_Revision_Control {
 		 * WordPress Hooks
 		 */
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
+		add_action( 'admin_notices', array( $this, 'action_maybe_show_notice_after_delete_revisions' ) );
 		add_action( 'init', array( $this, 'change_post_type_revision_support' ), PHP_INT_MAX );
 		add_action( 'init', array( $this, 'check_db_version' ) );
 		add_action( 'init', array( $this, 'register_assets' ), 0 );
-		add_filter( 'post_row_actions', array( $this, 'filter_maybe_add_post_row_actions' ), PHP_INT_MAX, 2 );
-		add_filter( 'wp_revisions_to_keep', array( $this, 'wp_revisions_to_keep' ), PHP_INT_MAX, 2 );
 		add_action( 'wp_ajax_simple_revision_control_delete_revisions', array( $this, 'action_ajax_delete_revisions' ) );
 		add_filter( 'handle_bulk_actions-edit-post', array( $this, 'filter_delete_revisions' ), 10, 3 );
-		add_action( 'admin_notices', array( $this, 'action_maybe_show_notice_after_delete_revisions' ) );
+		add_filter( 'post_row_actions', array( $this, 'filter_maybe_add_post_row_actions' ), PHP_INT_MAX, 2 );
+		add_filter( 'wp_revisions_to_keep', array( $this, 'wp_revisions_to_keep' ), PHP_INT_MAX, 2 );
 		/**
 		 * Plugin Hooks
 		 */
