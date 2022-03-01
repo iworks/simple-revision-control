@@ -16,7 +16,7 @@
  * Requires PHP:      PLUGIN_REQUIRES_PHP
  * Author:            AUTHOR_NAME
  * Author URI:        AUTHOR_URI
- * Text Domain:       og
+ * Text Domain:       simple-revision-control
  * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
