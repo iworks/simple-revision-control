@@ -4,8 +4,31 @@
  * Copyright (c) 2022; * Licensed GPLv2+
  */
 jQuery(document).ready(function($) {
-    $('#simple_revision_control_admin_index .delete').on('click', function() {
-        window.console.log('uyes2');
+    $('#simple_revision_control_admin_index .delete').on('click', function(e) {
+        var $spinner = $('.spinner', $(this).parent());
+        var $button = $(this);
+        var data;
+        e.preventDefault();
+        $spinner.addClass('is-active');
+        $button.attr('disabled', 'disabled');
+        data = {
+            action: 'simple_revision_control_delete_revisions',
+            posttype: $button.data('posttype'),
+            _wpnonce: $button.data('nonce')
+        };
+        $.post(ajaxurl, data, function(response) {
+            if (response.success) {
+                window.location.reload();
+                return;
+            }
+            $button.parent().html(
+                '<div class="notice notice-error"><p>' +
+                response.data +
+                '</p></div>'
+            );
+        });
+
+        return false;
     });
     /**
      * show/hide after load

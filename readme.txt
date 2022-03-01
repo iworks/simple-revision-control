@@ -3,12 +3,14 @@ Contributors: iworks
 Donate link: https://ko-fi.com/iworks?utm_source=simple-revision-control&utm_medium=readme-donate
 Tags: revision, revisions, post, page, custom post type
 Requires at least: PLUGIN_REQUIRES_WORDPRESS
-Tested up to: 5.9
+Tested up to: 6.0
 Stable tag: PLUGIN_VERSION
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Simple Revision Control is a plugin for WordPress which gives the user simple control over the [Revisions](https://wordpress.org/support/article/revisions/) functionality. Including custom post types.
+
+You can also delete all unwanted revisions at all.
 
 If you are able to edit `wp-config.php` file or you want to have only one number of revisions for all post types, then please consider do not install this plugin, instead just edit `wp-config.php` file.
 
@@ -34,24 +36,20 @@ If you are able to edit `wp-config.php` file or you want to have only one number
 
 = Why this plugin is better than the entry in `wp-config.php` file? =
 
-You can set up a number of revisions by post type. Setting in `wp-config.php` file allows setting only one number of revisions for all post types.
-
-= Why my CPT is not listed? =
-
-You can setup number of revisions only for post types witch supports `revisions`  See more: [function Reference / register post type / parameters / supports](http://codex.wordpress.org/Function_Reference/register_post_type#Parameters)
-
-= My website is not in English, will simple-revision-control work? =
-
-Simple Revision Control plugin will work on websites in any language.
+You can set up a number of revisions by post type. Setting in `wp-config.php` file allows setting only one number of revisions for all post types. You can add od remove revisions support per post types. At least you can delete unwanted revisions.
 
 == Screenshots ==
 
-1. Simple Revision Control set up.
-1. Simple Revision Control set up with CPT.
+1. Set up with post types.
+1. Info screen with ability to delete revisions by post type.
+1. Entries list screen with ability to delete revisions by element.
 
 == Changelog ==
 
-= 2.0.1 (2022-02-18) =
+= 2.1.0 (2022-03-01) =
+* Added ability to remove revisions - depend on configuration.
+* Added ability to turn on revisions for post types without revisions.
+* Improved UX on configuration screen.
 * Updated iWorks Options to 2.8.1.
 * Updated iWorks Rate to 2.1.0.
 

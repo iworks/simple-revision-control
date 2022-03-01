@@ -48,6 +48,13 @@ class iWorks_Simple_Revision_Control {
 	 */
 	private $debug = false;
 
+	/**
+	 * delete revision action name
+	 *
+	 * @since 2.1.0
+	 */
+	private $delete_revision_action_name = 'src_delete_revisions';
+
 	public function __construct() {
 		/**
 		 * static settings
@@ -59,11 +66,15 @@ class iWorks_Simple_Revision_Control {
 		/**
 		 * WordPress Hooks
 		 */
-		add_action( 'init', array( $this, 'register_assets' ), 0 );
-		add_action( 'init', array( $this, 'check_db_version' ) );
-		add_action( 'init', array( $this, 'change_post_type_revision_support' ), PHP_INT_MAX );
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
+		add_action( 'init', array( $this, 'change_post_type_revision_support' ), PHP_INT_MAX );
+		add_action( 'init', array( $this, 'check_db_version' ) );
+		add_action( 'init', array( $this, 'register_assets' ), 0 );
+		add_filter( 'post_row_actions', array( $this, 'filter_maybe_add_post_row_actions' ), PHP_INT_MAX, 2 );
 		add_filter( 'wp_revisions_to_keep', array( $this, 'wp_revisions_to_keep' ), PHP_INT_MAX, 2 );
+		add_action( 'wp_ajax_simple_revision_control_delete_revisions', array( $this, 'action_ajax_delete_revisions' ) );
+		add_filter( 'handle_bulk_actions-edit-post', array( $this, 'filter_delete_revisions' ), 10, 3 );
+		add_action( 'admin_notices', array( $this, 'action_maybe_show_notice_after_delete_revisions' ) );
 		/**
 		 * Plugin Hooks
 		 */
@@ -97,11 +108,15 @@ class iWorks_Simple_Revision_Control {
 	}
 
 	public function wp_revisions_to_keep( $num, $post ) {
-		$revisions = $this->options->get_option( $post->post_type );
-		if ( empty( $revisions ) ) {
-			return $num;
+		switch ( $this->options->get_option( $post->post_type . '_mode' ) ) {
+			case 'unlimited':
+				return -1;
+			case 'custom':
+				return $this->options->get_option( $post->post_type );
+			case 'off':
+				return 0;
 		}
-		return $revisions;
+		return $num;
 	}
 
 	public function admin_init() {
@@ -198,10 +213,20 @@ class iWorks_Simple_Revision_Control {
 		return $options;
 	}
 
+	/**
+	 * helper to build SQL query
+	 *
+	 * @since 2.1.0
+	 */
 	private function filter_get_utilization_helper_array_map( $a ) {
 		return '%d';
 	}
 
+	/**
+	 * get utlization data
+	 *
+	 * @since 2.1.0
+	 */
 	public function filter_get_utilization() {
 		$post_types = $this->options->get_options_by_group( 'post_type_mode' );
 		global $wpdb;
@@ -224,7 +249,7 @@ class iWorks_Simple_Revision_Control {
 			);
 			$query        = new WP_Query( $args );
 			$one['count'] = count( $query->posts );
-			if ( 0 < $one['count'] ) {
+			if ( 'unlimited' !== $one['value'] && 0 < $one['count'] ) {
 				$sql = sprintf(
 					'select count(*) from %s where post_type = %%s and post_parent in ( %s ) group by post_parent having count(*) > %%d',
 					$wpdb->posts,
@@ -232,7 +257,11 @@ class iWorks_Simple_Revision_Control {
 				);
 				$p   = $query->posts;
 				array_unshift( $p, 'revision' );
-				array_push( $p, $one['limit'] );
+				if ( 'off' === $one['value'] ) {
+					array_push( $p, 0 );
+				} else {
+					array_push( $p, $one['limit'] );
+				}
 				$query         = $wpdb->prepare( $sql, $p );
 				$result        = $wpdb->get_results( $query, ARRAY_A );
 				$one['extend'] = count( $result );
@@ -258,11 +287,33 @@ class iWorks_Simple_Revision_Control {
 			 */
 			switch ( $one['value'] ) {
 				case 'off':
-					$content .= sprintf(
-						'<td>%s</td>',
-						esc_html__( 'This post type does not supports revisions.', 'simple-revision-control' )
-					);
-					$content .= '<td>&mdash;</td>';
+					if ( 0 === $one['extend'] ) {
+						$content .= sprintf(
+							'<td colspan="2">%s</td>',
+							esc_html__( 'This post type does not supports revisions.', 'simple-revision-control' )
+						);
+					} else {
+						$content .= sprintf(
+							'<td>%s</td>',
+							esc_html(
+								sprintf(
+									_n(
+										'This post type does not supports revisions, but there is one entry with revisions.',
+										'This post type does not supports revisions, but there are %d entries with revisions.',
+										$one['extend'],
+										'simple-revision-control'
+									),
+									$one['extend']
+								)
+							)
+						);
+						$content .= sprintf(
+							'<td><span class="spinner" style="float: left"></span><button class="button delete" data-posttype="%s" data-nonce="%s">%s</button></td>',
+							esc_attr( $one['post_type'] ),
+							esc_attr( wp_create_nonce( $one['post_type'] ) ),
+							__( 'Delete revisions', 'simple-revision-control' )
+						);
+					}
 					break;
 				case 'custom':
 					if ( isset( $one['extend'] ) && 0 < $one['extend'] ) {
@@ -290,12 +341,14 @@ class iWorks_Simple_Revision_Control {
 							)
 						);
 						$content .= sprintf(
-							'<td><a href="#" class="button delete">%s</a></td>',
+							'<td><span class="spinner" style="float: left"></span><button class="button delete" data-posttype="%s" data-nonce="%s">%s</button></td>',
+							esc_attr( $one['post_type'] ),
+							esc_attr( wp_create_nonce( $one['post_type'] ) ),
 							__( 'Delete revisions', 'simple-revision-control' )
 						);
 					} else {
 						$content .= sprintf(
-							'<td>%s</td>',
+							'<td colspan="2">%s</td>',
 							esc_html(
 								sprintf(
 									_n(
@@ -308,15 +361,13 @@ class iWorks_Simple_Revision_Control {
 								)
 							)
 						);
-						$content .= '<td>&mdash;</td>';
 					}
 					break;
 				case 'unlimited':
 					$content .= sprintf(
-						'<td>%s</td>',
+						'<td colspan="2">%s</td>',
 						esc_html__( 'There is no limit for this post type.', 'simple-revision-control' )
 					);
-					$content .= '<td>&mdash;</td>';
 					break;
 			}
 			/**
@@ -346,6 +397,11 @@ class iWorks_Simple_Revision_Control {
 		}
 	}
 
+	/**
+	 * check and update (if needed) data in DB
+	 *
+	 * @since 2.1.0
+	 */
 	public function check_db_version() {
 		$db_version = intval( $this->options->get_option( 'db_version' ) );
 		/**
@@ -377,6 +433,194 @@ class iWorks_Simple_Revision_Control {
 			}
 			$this->options->update_option( 'db_version', $this->db_version );
 		}
+	}
+
+	/**
+	 * add row action to remove unwanted revisions
+	 *
+	 * @since 2.1.0
+	 */
+	public function filter_maybe_add_post_row_actions( $actions, $post ) {
+		global $wpdb;
+		$mode  = $this->options->get_option( $post->post_type . '_mode' );
+		$limit = $this->options->get_option( $post->post_type );
+		switch ( $mode ) {
+			case 'off':
+			case 'custom':
+				$query = sprintf(
+					'select count(*) from %s where post_parent = %%d and post_type = %%s',
+					$wpdb->posts
+				);
+				$query = $wpdb->prepare( $query, $post->ID, 'revision' );
+				$count = $wpdb->get_var( $query );
+				if ( $count > $limit ) {
+					$nonce = wp_create_nonce( 'bulk-posts' );
+					$actions[ $this->delete_revision_action_name ] = sprintf(
+						'<a href="%s" aria-label="%s" class="submitdelete" data-id="%d" data-nonce="%s">%s</a>',
+						esc_url(
+							add_query_arg(
+								array(
+									'post[]'   => $post->ID,
+									'action'   => $this->delete_revision_action_name,
+									'_wpnonce' => $nonce,
+								)
+							)
+						),
+						esc_attr__( 'Delete revisions', 'simple-revision-control' ),
+						$post->ID,
+						esc_attr( $nonce ),
+						esc_html__( 'Delete revisions', 'simple-revision-control' )
+					);
+				}
+				break;
+		}
+		return $actions;
+	}
+
+	public function action_ajax_delete_revisions() {
+		if ( ! isset( $_POST['posttype'] ) ) {
+			wp_send_json_error();
+		}
+		if ( ! isset( $_POST['_wpnonce'] ) ) {
+			wp_send_json_error();
+		}
+		$post_type = $_POST['posttype'];
+		if ( ! wp_verify_nonce( $_POST['_wpnonce'], $post_type ) ) {
+			wp_send_json_error();
+		}
+		global $wpdb;
+		$mode  = $this->options->get_option( $post_type . '_mode' );
+		$limit = $this->options->get_option( $post_type );
+		switch ( $mode ) {
+			case 'off':
+				$query = sprintf(
+					'select s.post_parent from %1$s s where s.post_parent in ( select p.ID from %1$s p where p.post_type = %%s ) and s.post_type = %%s group by s.post_parent having count(s.post_parent) > 0',
+					$wpdb->posts
+				);
+				$query = $wpdb->prepare( $query, $post_type, 'revision' );
+
+				$results = $wpdb->get_col( $query );
+				if ( empty( $results ) ) {
+					wp_send_json_error( __( 'Something went wrong!', 'simple-revision-control' ) );
+				}
+				$query    = sprintf(
+					'select ID from %s where post_parent in ( %%s )',
+					$wpdb->posts
+				);
+				$query    = sprintf(
+					$query,
+					implode( ', ', array_map( array( $this, 'filter_get_utilization_helper_array_map' ), $results ) )
+				);
+				$query    = $wpdb->prepare( $query, $results );
+				$results2 = $wpdb->get_col( $query );
+				foreach ( $results2 as $ID ) {
+					wp_delete_post( $ID, true );
+				}
+				break;
+			case 'custom':
+				$query   = sprintf(
+					'select s.post_parent from %1$s s where s.post_parent in ( select p.ID from %1$s p where p.post_type = %%s ) and s.post_type = %%s group by s.post_parent having count(s.post_parent) > %%d',
+					$wpdb->posts
+				);
+				$query   = $wpdb->prepare( $query, $post_type, 'revision', $limit );
+				$results = $wpdb->get_col( $query );
+				if ( empty( $results ) ) {
+					wp_send_json_error( __( 'Something went wrong!', 'simple-revision-control' ) );
+				}
+				foreach ( $results as $parent_id ) {
+					$query    = sprintf(
+						'select ID from %s where post_parent = %%d order by ID desc limit 65535 offset %%d',
+						$wpdb->posts
+					);
+					$query    = $wpdb->prepare( $query, $parent_id, $limit );
+					$results2 = $wpdb->get_col( $query );
+					foreach ( $results2 as $ID ) {
+						wp_delete_post( $ID, true );
+					}
+				}
+				break;
+		}
+		wp_send_json_success();
+	}
+
+	/**
+	 * Delete revisions when it is needed!
+	 *
+	 * @since 2.1.0
+	 */
+	public function filter_delete_revisions( $sendback, $doaction, $post_ids ) {
+		if ( $this->delete_revision_action_name !== $doaction ) {
+			return $sendback;
+		}
+		$post_id  = $post_ids[0];
+		$sendback = remove_query_arg( array( 'msg', 'post_id', 'post_ids' ), $sendback );
+		/**
+		 * get settings
+		 */
+		$post_type = get_post_type( $post_id );
+		$mode      = $this->options->get_option( $post_type . '_mode' );
+		$limit     = $this->options->get_option( $post_type );
+		$query     = 'select ID from %s where post_parent = %%s and post_type = %%s';
+		switch ( $mode ) {
+			case 'unlimited':
+				return $sendback;
+			case 'custom':
+				$query .= ' order by ID desc limit 65535 offset %%d';
+				break;
+		}
+		if ( empty( $query ) ) {
+			return $sendback;
+		}
+		global $wpdb;
+		$query   = sprintf( $query, $wpdb->posts );
+		$query   = $wpdb->prepare( $query, $post_id, 'revision', $limit );
+		$results = $wpdb->get_col( $query );
+		foreach ( $results as $ID ) {
+			wp_delete_post( $ID, true );
+		}
+
+		return add_query_arg(
+			array(
+				'msg'     => 'src_delete_revisions',
+				'post_id' => $post_id,
+				'count'   => count( $results ),
+			),
+			$sendback
+		);
+	}
+
+	/**
+	 * show message
+	 *
+	 * @since 2.1.0
+	 */
+	public function action_maybe_show_notice_after_delete_revisions() {
+		if ( ! isset( $_GET['msg'] ) ) {
+			return;
+		}
+		if ( $this->delete_revision_action_name !== $_GET['msg'] ) {
+			return;
+		}
+		$post_id = filter_input( INPUT_GET, 'post_id', FILTER_VALIDATE_INT );
+		$count   = filter_input( INPUT_GET, 'count', FILTER_VALIDATE_INT );
+		$message = __( 'All revisions of "%1$s" was successful deleted.', 'simple-revision-control' );
+		if ( 0 < $count ) {
+			$message = _n(
+				'%2$d revision of "%1$s" was successful deleted',
+				'%2$d revisions of "%1$s" was successful deleted',
+				$count,
+				'simple-revision-control'
+			);
+		}
+		$title = __( 'Unknown', 'simple-revision-control' );
+		if ( 0 < $post_id ) {
+			$title = get_the_title( $post_id );
+		}
+		echo '<div class="notice notice-info">';
+		echo '<p>';
+		printf( $message, sprintf( '<strong>%s</strong>', $title ), $count );
+		echo '</p>';
+		echo '</div>';
 	}
 
 }
