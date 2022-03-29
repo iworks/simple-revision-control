@@ -47,6 +47,9 @@ You can set up a number of revisions by post type. Setting in `wp-config.php` fi
 
 == Changelog ==
 
+= 2.1.1 (2022-03-29) =
+* Fixed warning on settings screen. Props for [tanohex](https://wordpress.org/support/users/tanohex/).
+
 = 2.1.0 (2022-03-01) =
 * Added ability to remove revisions - depend on configuration.
 * Added ability to turn on revisions for post types without revisions.

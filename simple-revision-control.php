@@ -62,7 +62,7 @@ load_plugin_textdomain( 'simple-revision-control', false, plugin_basename( dirna
 /**
  * load
  */
-require_once $includes . '/iworks/class-simple-revision-control.php';
+require_once $includes . '/iworks/simple-revision-control/class-simple-revision-control.php';
 
 /**
  * run

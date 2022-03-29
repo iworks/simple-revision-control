@@ -26,43 +26,12 @@ if ( class_exists( 'iWorks_Simple_Revision_Control' ) ) {
 	return;
 }
 
-class iWorks_Simple_Revision_Control {
+require_once 'class-simple-revision-control-base.php';
 
-	private $options;
-	private $capability;
-	private $dir;
-	private $base;
-
-	/**
-	 * DB VERSION
-	 */
-	private $db_version = 210;
-
-	/**
-	 * Plugin version
-	 */
-	private $version = 'PLUGIN_VERSION';
-
-	/**
-	 * debug
-	 */
-	private $debug = false;
-
-	/**
-	 * delete revision action name
-	 *
-	 * @since 2.1.0
-	 */
-	private $delete_revision_action_name = 'src_delete_revisions';
+class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base {
 
 	public function __construct() {
-		/**
-		 * static settings
-		 */
-		$this->base       = dirname( dirname( __FILE__ ) );
-		$this->dir        = basename( dirname( $this->base ) );
-		$this->capability = apply_filters( 'simple_revision_control_capability', 'manage_options' );
-		$this->debug      = defined( 'WP_DEBUG' ) && WP_DEBUG;
+		parent::__construct();
 		/**
 		 * WordPress Hooks
 		 */
@@ -80,10 +49,6 @@ class iWorks_Simple_Revision_Control {
 		 */
 		add_filter( 'iworks_plugin_get_options', array( $this, 'filter_add_post_types_options' ), 10, 2 );
 		add_filter( 'simple_revision_control_utilization', array( $this, 'filter_get_utilization' ) );
-		/**
-		 * global option object
-		 */
-		$this->options = get_simple_revision_control_options();
 		/**
 		 * iWorks Rate Class
 		 */
@@ -232,9 +197,10 @@ class iWorks_Simple_Revision_Control {
 		global $wpdb;
 		$print = array();
 		foreach ( $post_types as $post_type ) {
-			$one          = $post_type;
-			$one['value'] = $this->options->get_option( $post_type['name'] );
-			$one['limit'] = $this->options->get_option( $post_type['post_type'] );
+			$one           = $post_type;
+			$one['value']  = $this->options->get_option( $post_type['name'] );
+			$one['limit']  = $this->options->get_option( $post_type['post_type'] );
+			$one['extend'] = 0;
 			if ( 0 === $one['value'] ) {
 				$print[] = $one;
 				continue;
