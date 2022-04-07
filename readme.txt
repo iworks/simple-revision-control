@@ -47,6 +47,9 @@ You can set up a number of revisions by post type. Setting in `wp-config.php` fi
 
 == Changelog ==
 
+= 2.1.2 (2022-04-07) =
+* Fixed settings link on plugins page. Props for [tanohex](https://wordpress.org/support/users/tanohex/).
+
 = 2.1.1 (2022-03-29) =
 * Fixed warning on settings screen. Props for [tanohex](https://wordpress.org/support/users/tanohex/).
 

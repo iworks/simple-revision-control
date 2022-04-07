@@ -30,8 +30,27 @@ require_once 'class-simple-revision-control-base.php';
 
 class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base {
 
+	/**
+	 * Plugin file name
+	 *
+	 * @since 1.2.2
+	 */
+	private $file;
+
+	/**
+	 * Plugin file base name
+	 *
+	 * @since 1.2.2
+	 */
+	private $plugin_file;
+
 	public function __construct() {
 		parent::__construct();
+		/**
+		 * basic settings
+		 */
+		$this->file        = dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) . '/simple-revision-control.php';
+		$this->plugin_file = plugin_basename( $this->file );
 		/**
 		 * WordPress Hooks
 		 */
@@ -86,16 +105,21 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 
 	public function admin_init() {
 		$this->options->options_init();
-		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
+		add_filter( 'plugin_action_links_' . $this->plugin_file, array( $this, 'add_settings_link' ) );
 	}
 
-	public function plugin_row_meta( $links, $file ) {
-		if ( $this->dir . '/simple-revision-control.php' == $file ) {
-			if ( ! is_multisite() && current_user_can( $this->capability ) ) {
-				$links[] = '<a href="themes.php?page=' . $this->dir . '/admin/index.php">' . __( 'Settings' ) . '</a>';
-			}
-		}
-		return $links;
+	/**
+	 * Add settings link to plugin_action_links.
+	 *
+	 * @since 2.1.2
+	 *
+	 * @param array  $actions     An array of plugin action links.
+	 */
+	public function add_settings_link( $actions ) {
+		$page      = $this->options->get_pagehook();
+		$url       = add_query_arg( 'page', $page, admin_url( 'options-general.php' ) );
+		$actions[] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), esc_html__( 'Settings', 'simple-revision-control' ) );
+		return $actions;
 	}
 
 	/**
