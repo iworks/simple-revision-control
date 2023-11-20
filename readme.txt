@@ -3,11 +3,10 @@ Contributors: iworks
 Donate link: https://ko-fi.com/iworks?utm_source=simple-revision-control&utm_medium=readme-donate
 Tags: revision, revisions, post, page, custom post type
 Requires at least: PLUGIN_REQUIRES_WORDPRESS
-Tested up to: 6.0
+Tested up to: PLUGIN_TESTED_WORDPRESS
 Stable tag: PLUGIN_VERSION
 Requires PHP: PLUGIN_REQUIRES_PHP
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
 
 PLUGIN_TAGLINE
 
@@ -46,6 +45,10 @@ You can set up a number of revisions by post type. Setting in `wp-config.php` fi
 1. Entries list screen with ability to delete revisions by element.
 
 == Changelog ==
+
+= 2.1.3 (2023-11-20) =
+* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.1.3.
+* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.8.8.
 
 = 2.1.2 (2022-04-07) =
 * Fixed settings link on plugins page. Props for [tanohex](https://wordpress.org/support/users/tanohex/).

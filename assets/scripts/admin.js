@@ -1,7 +1,7 @@
 /**
- * Simple Revision Control - v2.1.2
+ * Simple Revision Control - v2.1.3
  * http://iworks.pl/en/plugins/fleet/
- * Copyright (c) 2022; * Licensed GPLv2+
+ * Copyright (c) 2023; * Licensed GPLv2+
  */
 jQuery(document).ready(function($) {
     $('#simple_revision_control_admin_index .delete').on('click', function(e) {
