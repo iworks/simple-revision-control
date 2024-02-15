@@ -493,18 +493,21 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 				if ( empty( $results ) ) {
 					wp_send_json_error( __( 'Something went wrong!', 'simple-revision-control' ) );
 				}
-				$query    = sprintf(
-					'select ID from %s where post_parent in ( %%s )',
+				$query     = sprintf(
+					'select ID from %s where post_parent in ( %%s ) and post_type = %%%%s',
 					$wpdb->posts
 				);
-				$query    = sprintf(
+				$query     = sprintf(
 					$query,
 					implode( ', ', array_map( array( $this, 'filter_get_utilization_helper_array_map' ), $results ) )
 				);
-				$query    = $wpdb->prepare( $query, $results );
-				$results2 = $wpdb->get_col( $query );
+				$results[] = 'revision';
+				$query     = $wpdb->prepare( $query, $results );
+				$results2  = $wpdb->get_col( $query );
 				foreach ( $results2 as $ID ) {
-					wp_delete_post( $ID, true );
+					if ( apply_filters( 'iworks/simple-revision-control/delete', 'revision' === get_post_type( $ID ), $ID ) ) {
+						wp_delete_post( $ID, true );
+					}
 				}
 				break;
 			case 'custom':
@@ -519,13 +522,15 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 				}
 				foreach ( $results as $parent_id ) {
 					$query    = sprintf(
-						'select ID from %s where post_parent = %%d order by ID desc limit 65535 offset %%d',
+						'select ID from %s where post_parent = %%d and post_type = %%s order by ID desc limit 65535 offset %%d',
 						$wpdb->posts
 					);
-					$query    = $wpdb->prepare( $query, $parent_id, $limit );
+					$query    = $wpdb->prepare( $query, $parent_id, 'revision', $limit );
 					$results2 = $wpdb->get_col( $query );
 					foreach ( $results2 as $ID ) {
-						wp_delete_post( $ID, true );
+						if ( apply_filters( 'iworks/simple-revision-control/delete', 'revision' === get_post_type( $ID ), $ID ) ) {
+							wp_delete_post( $ID, true );
+						}
 					}
 				}
 				break;
@@ -566,7 +571,9 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 		$query   = $wpdb->prepare( $query, $post_id, 'revision', $limit );
 		$results = $wpdb->get_col( $query );
 		foreach ( $results as $ID ) {
-			wp_delete_post( $ID, true );
+			if ( apply_filters( 'iworks/simple-revision-control/delete', 'revision' === get_post_type( $ID ), $ID ) ) {
+				wp_delete_post( $ID, true );
+			}
 		}
 
 		return add_query_arg(

@@ -46,6 +46,11 @@ You can set up a number of revisions by post type. Setting in `wp-config.php` fi
 
 == Changelog ==
 
+= 2.2.0 (2024-02-15) =
+* The security of deleting previous versions has been improved, normal entries should not be deleted from now on.
+* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.1.6.
+* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.9.1.
+
 = 2.1.3 (2023-11-20) =
 * The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.1.3.
 * The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.8.8.

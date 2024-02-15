@@ -13,8 +13,8 @@ jQuery(document).ready(function($) {
         };
         $.post(ajaxurl, data, function(response) {
             if (response.success) {
-                window.location.reload();
-                return;
+                $('td', $button.closest('tr')).html('&mdash;');
+                return false;
             }
             $button.parent().html(
                 '<div class="notice notice-error"><p>' +
