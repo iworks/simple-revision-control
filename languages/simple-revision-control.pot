@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.2.1\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2025-02-22 15:04:37+00:00\n"
+"POT-Creation-Date: 2025-02-22 15:20:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,17 +37,17 @@ msgid "Post"
 msgstr ""
 
 #: etc/options.php:31 etc/options.php:58
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:178
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:179
 msgid "Unlimited revisions"
 msgstr ""
 
 #: etc/options.php:34 etc/options.php:61
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:181
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:182
 msgid "No revisions"
 msgstr ""
 
 #: etc/options.php:37 etc/options.php:64
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:184
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:185
 msgid "Custom number of revisions"
 msgstr ""
 
@@ -133,7 +133,7 @@ msgid "Failed Security Check"
 msgstr ""
 
 #: includes/iworks/rate/rate.php:133
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:129
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:130
 msgid "Settings"
 msgstr ""
 
@@ -241,23 +241,23 @@ msgid ""
 "Thank you for all the ratings, reviews and donates."
 msgstr ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:275
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:276
 msgid "Post type name"
 msgstr ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:276
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:277
 msgid "Info"
 msgstr ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:277
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:278
 msgid "Actions"
 msgstr ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:291
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:292
 msgid "This post type does not supports revisions."
 msgstr ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:299
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:300
 #. translators: %d number of entries
 msgid ""
 "This post type does not supports revisions, but there is one entry with "
@@ -268,49 +268,49 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:313
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:348
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:471
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:474
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:314
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:349
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:472
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:475
 msgid "Delete revisions"
 msgstr ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:324
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:325
 #. translators: %1$s number of revisions, %2$s number of entries
 msgid "There is %2$s with more than one revision."
 msgid_plural "There is %2$s with more than %1$d revisions."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:333
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:334
 #. translators: %1$s number of entries
 msgid "one entry"
 msgid_plural "%d entries"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:356
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:357
 #. translators: %1$s number of revisions
 msgid "There is no entries with more than one revision."
 msgid_plural "There is no entries with more than %1$d revisions."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:371
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:372
 msgid "There is no limit for this post type."
 msgstr ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:506
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:533
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:507
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:534
 msgid "Something went wrong!"
 msgstr ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:616
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:617
 #. translators: %1$s number of deleted revisions
 msgid "All revisions of \"%1$s\" was successful deleted."
 msgstr ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:619
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:620
 #. translators: %1$s number of all revisions, %2$d - numnber of deleted
 #. revisions
 msgid "%2$d revision of \"%1$s\" was successful deleted"
@@ -318,7 +318,7 @@ msgid_plural "%2$d revisions of \"%1$s\" was successful deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:626
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:627
 msgid "Unknown"
 msgstr ""
 

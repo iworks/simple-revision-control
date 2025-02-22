@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - Simple Revision Control - Development (trunk)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2025-02-22 15:04:15+00:00\n"
+"POT-Creation-Date: 2025-02-22 15:20:31+00:00\n"
 "PO-Revision-Date: 2024-04-15 05:16:20+0000\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -27,17 +27,17 @@ msgid "Post"
 msgstr "Wpis"
 
 #: etc/options.php:31 etc/options.php:58
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:178
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:179
 msgid "Unlimited revisions"
 msgstr "Nielimitowane wersje"
 
 #: etc/options.php:34 etc/options.php:61
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:181
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:182
 msgid "No revisions"
 msgstr "Brak wersji"
 
 #: etc/options.php:37 etc/options.php:64
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:184
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:185
 msgid "Custom number of revisions"
 msgstr "Własna liczba wersji"
 
@@ -123,7 +123,7 @@ msgid "Failed Security Check"
 msgstr "Nieudana kontrola bezpieczeństwa"
 
 #: includes/iworks/rate/rate.php:133
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:129
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:130
 msgid "Settings"
 msgstr "Ustawienia"
 
@@ -251,24 +251,24 @@ msgstr ""
 "niej myślisz. To dla nas bardzo ważne, aby móc ją rozwijać. Dziękujemy za "
 "wszystkie oceny, recenzje oraz dodatkowe wsparcie."
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:275
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:276
 msgid "Post type name"
 msgstr "Nazwa typu treści"
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:276
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:277
 msgid "Info"
 msgstr "Informacja"
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:277
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:278
 msgid "Actions"
 msgstr "Działania"
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:291
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:292
 msgid "This post type does not supports revisions."
 msgstr "Typ treści nie obsługuje wersji."
 
 #. translators: %d number of entries
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:299
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:300
 msgid ""
 "This post type does not supports revisions, but there is one entry with "
 "revisions."
@@ -279,15 +279,15 @@ msgstr[0] "Typ treści nie obsługuje wersji, ale jest jeden element z wersjami.
 msgstr[1] "Typ treści nie obsługuje wersji, ale są %d elementy z wersjami."
 msgstr[2] "Typ treści nie obsługuje wersji, ale jest %d elementów z wersjami."
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:313
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:348
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:471
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:474
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:314
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:349
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:472
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:475
 msgid "Delete revisions"
 msgstr "Usuń wersje"
 
 #. translators: %1$s number of revisions, %2$s number of entries
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:324
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:325
 msgid "There is %2$s with more than one revision."
 msgid_plural "There is %2$s with more than %1$d revisions."
 msgstr[0] "Istnieje %2$s z więcej niż jedną wersją."
@@ -295,7 +295,7 @@ msgstr[1] "Istnieją %2$s z więcej niż %1$d wersjami."
 msgstr[2] "Istnieją %2$s z więcej niż %1$d wersjami."
 
 #. translators: %1$s number of entries
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:333
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:334
 msgid "one entry"
 msgid_plural "%d entries"
 msgstr[0] "jedna treść"
@@ -303,37 +303,37 @@ msgstr[1] "%d treści"
 msgstr[2] "%d treści"
 
 #. translators: %1$s number of revisions
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:356
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:357
 msgid "There is no entries with more than one revision."
 msgid_plural "There is no entries with more than %1$d revisions."
 msgstr[0] "Brak treści z więcej niż jedną wersją."
 msgstr[1] "Brak treści z więcej niż %1$d wersjami."
 msgstr[2] "Brak treści z więcej niż %1$d wersjami."
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:371
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:372
 msgid "There is no limit for this post type."
 msgstr "Brak limitu dla tego typu treści."
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:506
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:533
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:507
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:534
 msgid "Something went wrong!"
 msgstr "Coś poszło nie tak!"
 
 #. translators: %1$s number of deleted revisions
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:616
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:617
 msgid "All revisions of \"%1$s\" was successful deleted."
 msgstr "Usunięto wszystkie wersje „%1$s”."
 
 #. translators: %1$s number of all revisions, %2$d - numnber of deleted
 #. revisions
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:619
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:620
 msgid "%2$d revision of \"%1$s\" was successful deleted"
 msgid_plural "%2$d revisions of \"%1$s\" was successful deleted"
 msgstr[0] "Została usunięta %2$d wersja „%1$s”"
 msgstr[1] "Zostały usunięte %2$d wersje „%1$s”"
 msgstr[2] "Zostało usuniętych %2$d wersji „%1$s”"
 
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:626
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:627
 msgid "Unknown"
 msgstr "Nieznane"
 
