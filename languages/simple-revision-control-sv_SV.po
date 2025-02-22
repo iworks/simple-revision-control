@@ -2,317 +2,392 @@
 # This file is distributed under the same license as the Plugins - Simple Revision Control - Development (trunk) package.
 msgid ""
 msgstr ""
+"Project-Id-Version: Plugins - Simple Revision Control - Development (trunk)\n"
+"Report-Msgid-Bugs-To: http://iworks.pl\n"
+"POT-Creation-Date: 2025-02-22 15:04:15+00:00\n"
 "PO-Revision-Date: 2022-05-08 10:58:51+0000\n"
+"Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/4.0.1\n"
-"Language: sv_SE\n"
-"Project-Id-Version: Plugins - Simple Revision Control - Development (trunk)\n"
 
-#: includes/iworks/options/options.php:1921
-msgid "Failed Security Check"
-msgstr ""
+#: etc/options.php:12
+msgid "Revisions configuration"
+msgstr "Versionskonfiguration"
 
-#: includes/iworks/rate/templates/plugins/og.php:24
-msgid "Install"
-msgstr "Installera"
+#: etc/options.php:13 etc/options.php:22
+msgid "Revisions"
+msgstr "Versioner"
 
-#. translators: %s is a plugin name with url
-#: includes/iworks/rate/templates/plugins/og.php:13
-msgid "Don't wait, install plugin %s!"
-msgstr "Vänta inte, installera tillägget %s!"
+#: etc/options.php:27
+msgid "Post"
+msgstr "Inlägg"
 
-#: includes/iworks/rate/templates/plugins/og.php:6
-msgid "Would you like to boost your website sharing abilities?"
-msgstr ""
+#: etc/options.php:31 etc/options.php:58
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:178
+msgid "Unlimited revisions"
+msgstr "Obegränsat antal versioner"
 
-#: includes/iworks/rate/rate.php:558
-msgid "https://wordpress.org/plugins/og/"
-msgstr "https://wordpress.org/plugins/og/"
+#: etc/options.php:34 etc/options.php:61
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:181
+msgid "No revisions"
+msgstr "Inga versioner"
 
-#: includes/iworks/rate/rate.php:557
-msgid "OG — Better Share on Social Media"
-msgstr "OG — Better Share on Social Media"
+#: etc/options.php:37 etc/options.php:64
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:184
+msgid "Custom number of revisions"
+msgstr "Anpassat antal versioner"
 
-#: includes/iworks/rate/rate.php:541
-msgid "OpenGraph"
-msgstr "OpenGraph"
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:612
-msgid "Unknown"
-msgstr "Okänt"
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:605
-msgid "%2$d revision of \"%1$s\" was successful deleted"
-msgid_plural "%2$d revisions of \"%1$s\" was successful deleted"
-msgstr[0] "%2$d version av ”%1$s” togs bort"
-msgstr[1] "%2$d versioner av ”%1$s” togs bort"
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:603
-msgid "All revisions of \"%1$s\" was successful deleted."
-msgstr "Alla versioner av ”%1$s” togs bort."
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:494
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:521
-msgid "Something went wrong!"
-msgstr "Något gick fel!"
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:359
-msgid "There is no limit for this post type."
-msgstr "Det finns ingen begränsning för denna inläggstyp."
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:344
-msgid "There is no entries with more than one revision."
-msgid_plural "There is no entries with more than %1$d revisions."
-msgstr[0] "Det finns inga inlägg med mer än en version."
-msgstr[1] "Det finns inga inlägg med mer än %1$d versioner."
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:322
-msgid "one entry"
-msgid_plural "%d entries"
-msgstr[0] "ett inlägg"
-msgstr[1] "%d inlägg"
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:314
-msgid "There is %2$s with more than one revision."
-msgid_plural "There is %2$s with more than %1$d revisions."
-msgstr[0] "Det finns %2$s inlägg med mer än en version."
-msgstr[1] "Det finns %2$s inlägg med mer än %1$d versioner."
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:304
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:337
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:459
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:462
-msgid "Delete revisions"
-msgstr "Ta bort versioner"
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:290
-msgid "This post type does not supports revisions, but there is one entry with revisions."
-msgid_plural "This post type does not supports revisions, but there are %d entries with revisions."
-msgstr[0] "Denna inläggstyp stöder inte versioner, men det finns ett inlägg med versioner."
-msgstr[1] "Denna inläggstyp stöder inte versioner, men det finns %d inlägg med versioner."
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:283
-msgid "This post type does not supports revisions."
-msgstr "Denna inläggstyp stöder inte versioner."
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:269
-msgid "Actions"
-msgstr "Åtgärder"
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:268
-msgid "Info"
-msgstr "Information"
-
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:267
-msgid "Post type name"
-msgstr "Namn på inläggstyp"
-
-#: etc/options.php:84
-msgid "Data"
-msgstr "Data"
+#: etc/options.php:54
+msgid "Page"
+msgstr "Sida"
 
 #: etc/options.php:80
 msgid "Info & Tools"
 msgstr "Information och verktyg"
 
-#: etc/options.php:37 etc/options.php:64
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:176
-msgid "Custom number of revisions"
-msgstr "Anpassat antal versioner"
+#: etc/options.php:84
+msgid "Data"
+msgstr "Data"
 
-#: etc/options.php:34 etc/options.php:61
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:173
-msgid "No revisions"
-msgstr "Inga versioner"
+#: etc/options.php:90 etc/options.php:129
+msgid "We are waiting for your message"
+msgstr "Vi ser fram emot ditt meddelande"
 
-#: etc/options.php:31 etc/options.php:58
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:170
-msgid "Unlimited revisions"
-msgstr "Obegränsat antal versioner"
+#: etc/options.php:96
+msgid "I love what I do!"
+msgstr "Jag älskar det jag gör!"
 
-#. Plugin URI of the plugin
-msgid "http://iworks.pl/en/plugins/fleet/"
-msgstr "http://iworks.pl/en/plugins/fleet/"
+#: etc/options.php:113
+msgid "Below are some links to help spread this plugin to other users"
+msgstr ""
+"Nedan finns några länkar som hjälper till att sprida detta tillägg till "
+"andra användare"
 
-#: includes/iworks/rate/templates/widgets/support.php:29
-msgid "Do you like our plugin? Could you rate him? Please let us know what you think about our plugin. It is important that we can develop this tool. Thank you for all the ratings, reviews and donates."
-msgstr "Gillar du vårt tillägg? Kan du betygsätta det? Berätta för oss vad du tycker om vårt tillägg. Det är viktigt att vi kan utveckla detta verktyg. Tack för alla betyg, recensioner och donationer."
+#: etc/options.php:115
+msgid "Give it a five stars on WordPress.org"
+msgstr "Ge det 5 stjärnor på WordPress.org"
 
-#. translators: %1$s: open anchor tag, %2$s: close anchor tag, %3$s: open
-#. anchor tag, %4$s: close anchor tag
-#: includes/iworks/rate/templates/widgets/support.php:14
-msgid "Please %1$scheck our FAQ%2$s before adding a thread with technical problem. If you do not find help there, %3$scheck support forum%4$s for similar problems."
-msgstr "%1$sKolla in våra vanliga frågor%2$s innan du lägger till en tråd med tekniskt problem. Om du inte hittar hjälp där, %3$skolla in supportforumet%4$s för liknande problem."
+#: etc/options.php:116
+msgid "Link to it so others can easily find it"
+msgstr "Länka till det så att andra enkelt kan hitta det"
 
-#: includes/iworks/rate/templates/widgets/support.php:5
-msgid "Do you have a technical problem? Please contact us. We will be happy to help you. Or maybe you have an idea for a new feature? Please let us know about it by filling the support form. We will try to add it!"
-msgstr "Har du ett tekniskt problem? Kontakta oss. Vi hjälper dig gärna. Eller kanske du har en idé om en ny funktion? Berätta det genom att fylla i supportformuläret. Vi kommer att försöka lägga till det!"
+#: etc/options.php:131
+msgid "WordPress Help Forum"
+msgstr "WordPress hjälpforum"
 
-#: includes/iworks/rate/templates/widgets/donate.php:4
-msgid "Provide me a coffee"
-msgstr "Köp en kopp kaffe till mig"
+#: includes/iworks/options/options.php:263
+msgid "An error occurred while getting the configuration."
+msgstr "Ett fel uppstod när konfigurationen hämtades."
 
-#: includes/iworks/rate/templates/widgets/donate.php:3
-msgid "If every plugin user did it, I could devote myself fully to working on this plugin. Thanks everyone!"
+#: includes/iworks/options/options.php:816
+#: includes/iworks/options/options.php:1910
+msgid "Select Image"
+msgstr "Välj bild"
+
+#: includes/iworks/options/options.php:821
+msgid "Delete image"
+msgstr "Ta bort bild"
+
+#: includes/iworks/options/options.php:927
+msgid "Save Changes"
+msgstr "Spara ändringarna"
+
+#: includes/iworks/options/options.php:1804
+msgid "Country"
+msgstr "Land"
+
+#: includes/iworks/options/options.php:1805
+msgid "City"
+msgstr "Ort"
+
+#: includes/iworks/options/options.php:1806
+msgid "Street"
+msgstr "Gata"
+
+#: includes/iworks/options/options.php:1807
+msgid "ZIP code"
+msgstr "Postnummer"
+
+#: includes/iworks/options/options.php:1963
+msgid "OFF"
+msgstr "AV"
+
+#: includes/iworks/options/options.php:1964
+msgid "ON"
+msgstr "PÅ"
+
+#: includes/iworks/options/options.php:2029
+msgid "Failed Security Check"
 msgstr ""
 
-#: includes/iworks/rate/templates/widgets/donate.php:2
-msgid "However, working on plugins and technical support requires many hours of work. If you want to appreciate it, you can provide me a coffee."
-msgstr "Att arbeta med tillägg och teknisk support kräver många timmars arbete. Om du vill visa din uppskattning kan du köpa en kopp kaffe till mig."
-
-#: includes/iworks/rate/templates/thanks.php:41
-msgid "I added review, do not show again"
-msgstr "Jag har redan skrivit en recension, visa inte igen"
-
-#: includes/iworks/rate/templates/thanks.php:37
-#: includes/iworks/rate/templates/widgets/support.php:34
-msgid "Add review"
-msgstr "Lägg till recension"
-
-#: includes/iworks/rate/templates/thanks.php:35
-#: includes/iworks/rate/templates/widgets/support.php:24
-msgid "Get help"
-msgstr "Skaffa hjälp"
-
-#. translators: %1$s: open anchor tag, %2$s: close anchor tag
-#: includes/iworks/rate/templates/thanks.php:31
-msgid "Please let us know what you think about our plugin. It is important that we can develop this tool. Thank you for all the ratings, reviews and donates. If you have a technical problem, please before you add a review %1$scheck our FAQ%2$s or contact us if you did not find help there. We will try to help you!"
-msgstr "Berätta vad du tycker om vårt tillägg. Det är viktigt och hjälper oss så att vi kan utveckla detta verktyg. Tack för alla betyg, recensioner och donationer. Om du har ett tekniskt problem och innan du lägger till en recension %1$skolla in våra vanliga frågor%2$s eller kontakta oss om du inte hittade hjälp där. Vi ska försöka hjälpa dig!"
-
-#. translators: %s is a plugin name wrapped by strong html tag
-#: includes/iworks/rate/templates/thanks.php:23
-msgid "Thank you for using our plugin %s!"
-msgstr "Tack för att du använder vårt tillägg %s!"
-
-#. translators: %s: plugin slug
-#: includes/iworks/rate/rate.php:460
-msgctxt "plugins support home"
-msgid "https://wordpress.org/support/plugin/%s"
-msgstr "https://wordpress.org/support/plugin/%s"
-
-#. translators: %s: plugin slug
-#: includes/iworks/rate/rate.php:453
-msgctxt "plugins home"
-msgid "https://wordpress.org/plugins/%s"
-msgstr "https://wordpress.org/plugins/%s"
+#: includes/iworks/rate/rate.php:133
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:129
+msgid "Settings"
+msgstr "Inställningar"
 
 #: includes/iworks/rate/rate.php:147
 #: includes/iworks/rate/templates/thanks.php:39
 msgid "Provide us a coffee"
 msgstr "Köp en kopp kaffe till oss"
 
-#: includes/iworks/options/options.php:769
-#: includes/iworks/options/options.php:1802
-msgid "Select Image"
-msgstr "Välj bild"
+#. translators: %s: plugin id
+#: includes/iworks/rate/rate.php:446
+#, fuzzy
+msgid "There is no plugin with id: %s."
+msgstr "Det finns ingen begränsning för denna inläggstyp."
 
-#: etc/options.php:131
-msgctxt "link to support forum on WordPress.org"
-msgid "https://wordpress.org/support/plugin/simple-revision-control/"
-msgstr "https://wordpress.org/support/plugin/simple-revision-control/"
+#: includes/iworks/rate/rate.php:563
+msgid "OpenGraph"
+msgstr "OpenGraph"
 
-#: etc/options.php:116
-msgid "Link to it so others can easily find it"
-msgstr "Länka till det så att andra enkelt kan hitta det"
+#: includes/iworks/rate/rate.php:579
+msgid "OG — Better Share on Social Media"
+msgstr "OG — Better Share on Social Media"
+
+#: includes/iworks/rate/rate.php:580
+msgid "https://wordpress.org/plugins/og/"
+msgstr "https://wordpress.org/plugins/og/"
+
+#: includes/iworks/rate/templates/plugins/og.php:4
+msgid "Would you like to boost your website sharing abilities?"
+msgstr ""
+
+#. translators: %s is a plugin name with url
+#: includes/iworks/rate/templates/plugins/og.php:9
+msgid "Don't wait, install plugin %s!"
+msgstr "Vänta inte, installera tillägget %s!"
+
+#. translators: %s is a plugin wp home name, %s plugin name
+#: includes/iworks/rate/templates/plugins/og.php:20
+msgid "Install"
+msgstr "Installera"
+
+#. translators: %s is a plugin name wrapped by strong html tag
+#: includes/iworks/rate/templates/thanks.php:23
+msgid "Thank you for using our plugin %s!"
+msgstr "Tack för att du använder vårt tillägg %s!"
+
+#. translators: %1$s: open anchor tag, %2$s: close anchor tag
+#: includes/iworks/rate/templates/thanks.php:31
+msgid ""
+"Please let us know what you think about our plugin. It is important that we "
+"can develop this tool. Thank you for all the ratings, reviews and donates. "
+"If you have a technical problem, please before you add a review %1$scheck "
+"our FAQ%2$s or contact us if you did not find help there. We will try to "
+"help you!"
+msgstr ""
+"Berätta vad du tycker om vårt tillägg. Det är viktigt och hjälper oss så att "
+"vi kan utveckla detta verktyg. Tack för alla betyg, recensioner och "
+"donationer. Om du har ett tekniskt problem och innan du lägger till en "
+"recension %1$skolla in våra vanliga frågor%2$s eller kontakta oss om du inte "
+"hittade hjälp där. Vi ska försöka hjälpa dig!"
+
+#: includes/iworks/rate/templates/thanks.php:35
+#: includes/iworks/rate/templates/widgets/support.php:21
+msgid "Get help"
+msgstr "Skaffa hjälp"
+
+#: includes/iworks/rate/templates/thanks.php:37
+#: includes/iworks/rate/templates/widgets/support.php:31
+msgid "Add review"
+msgstr "Lägg till recension"
+
+#: includes/iworks/rate/templates/thanks.php:41
+msgid "I added review, do not show again"
+msgstr "Jag har redan skrivit en recension, visa inte igen"
+
+#: includes/iworks/rate/templates/widgets/donate.php:2
+msgid ""
+"However, working on plugins and technical support requires many hours of "
+"work. If you want to appreciate it, you can provide me a coffee."
+msgstr ""
+"Att arbeta med tillägg och teknisk support kräver många timmars arbete. Om "
+"du vill visa din uppskattning kan du köpa en kopp kaffe till mig."
+
+#: includes/iworks/rate/templates/widgets/donate.php:3
+msgid ""
+"If every plugin user did it, I could devote myself fully to working on this "
+"plugin. Thanks everyone!"
+msgstr ""
+
+#: includes/iworks/rate/templates/widgets/donate.php:4
+msgid "Provide me a coffee"
+msgstr "Köp en kopp kaffe till mig"
+
+#: includes/iworks/rate/templates/widgets/support.php:4
+msgid ""
+"Do you have a technical problem? Please contact us. We will be happy to help "
+"you. Or maybe you have an idea for a new feature? Please let us know about "
+"it by filling the support form. We will try to add it!"
+msgstr ""
+"Har du ett tekniskt problem? Kontakta oss. Vi hjälper dig gärna. Eller "
+"kanske du har en idé om en ny funktion? Berätta det genom att fylla i "
+"supportformuläret. Vi kommer att försöka lägga till det!"
+
+#. translators: %1$s: open anchor tag, %2$s: close anchor tag, %3$s: open
+#. anchor tag, %4$s: close anchor tag
+#: includes/iworks/rate/templates/widgets/support.php:11
+msgid ""
+"Please %1$scheck our FAQ%2$s before adding a thread with technical problem. "
+"If you do not find help there, %3$scheck support forum%4$s for similar "
+"problems."
+msgstr ""
+"%1$sKolla in våra vanliga frågor%2$s innan du lägger till en tråd med "
+"tekniskt problem. Om du inte hittar hjälp där, %3$skolla in "
+"supportforumet%4$s för liknande problem."
+
+#: includes/iworks/rate/templates/widgets/support.php:26
+msgid ""
+"Do you like our plugin? Could you rate him? Please let us know what you "
+"think about our plugin. It is important that we can develop this tool. Thank "
+"you for all the ratings, reviews and donates."
+msgstr ""
+"Gillar du vårt tillägg? Kan du betygsätta det? Berätta för oss vad du tycker "
+"om vårt tillägg. Det är viktigt att vi kan utveckla detta verktyg. Tack för "
+"alla betyg, recensioner och donationer."
+
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:275
+msgid "Post type name"
+msgstr "Namn på inläggstyp"
+
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:276
+msgid "Info"
+msgstr "Information"
+
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:277
+msgid "Actions"
+msgstr "Åtgärder"
+
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:291
+msgid "This post type does not supports revisions."
+msgstr "Denna inläggstyp stöder inte versioner."
+
+#. translators: %d number of entries
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:299
+msgid ""
+"This post type does not supports revisions, but there is one entry with "
+"revisions."
+msgid_plural ""
+"This post type does not supports revisions, but there are %d entries with "
+"revisions."
+msgstr[0] ""
+"Denna inläggstyp stöder inte versioner, men det finns ett inlägg med "
+"versioner."
+msgstr[1] ""
+"Denna inläggstyp stöder inte versioner, men det finns %d inlägg med "
+"versioner."
+
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:313
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:348
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:471
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:474
+msgid "Delete revisions"
+msgstr "Ta bort versioner"
+
+#. translators: %1$s number of revisions, %2$s number of entries
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:324
+msgid "There is %2$s with more than one revision."
+msgid_plural "There is %2$s with more than %1$d revisions."
+msgstr[0] "Det finns %2$s inlägg med mer än en version."
+msgstr[1] "Det finns %2$s inlägg med mer än %1$d versioner."
+
+#. translators: %1$s number of entries
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:333
+msgid "one entry"
+msgid_plural "%d entries"
+msgstr[0] "ett inlägg"
+msgstr[1] "%d inlägg"
+
+#. translators: %1$s number of revisions
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:356
+msgid "There is no entries with more than one revision."
+msgid_plural "There is no entries with more than %1$d revisions."
+msgstr[0] "Det finns inga inlägg med mer än en version."
+msgstr[1] "Det finns inga inlägg med mer än %1$d versioner."
+
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:371
+msgid "There is no limit for this post type."
+msgstr "Det finns ingen begränsning för denna inläggstyp."
+
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:506
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:533
+msgid "Something went wrong!"
+msgstr "Något gick fel!"
+
+#. translators: %1$s number of deleted revisions
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:616
+msgid "All revisions of \"%1$s\" was successful deleted."
+msgstr "Alla versioner av ”%1$s” togs bort."
+
+#. translators: %1$s number of all revisions, %2$d - numnber of deleted
+#. revisions
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:619
+msgid "%2$d revision of \"%1$s\" was successful deleted"
+msgid_plural "%2$d revisions of \"%1$s\" was successful deleted"
+msgstr[0] "%2$d version av ”%1$s” togs bort"
+msgstr[1] "%2$d versioner av ”%1$s” togs bort"
+
+#: includes/iworks/simple-revision-control/class-simple-revision-control.php:626
+msgid "Unknown"
+msgstr "Okänt"
+
+#. Plugin Name of the plugin/theme
+msgid "Simple Revision Control"
+msgstr "Simple Revision Control"
+
+#. Plugin URI of the plugin/theme
+msgid "PLUGIN_URI"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "PLUGIN_DESCRIPTION"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "AUTHOR_NAME"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "AUTHOR_URI"
+msgstr ""
 
 #: etc/options.php:116
 msgctxt "plugin home page on WordPress.org"
 msgid "https://wordpress.org/plugins/simple-revision-control/"
 msgstr "https://wordpress.org/plugins/simple-revision-control/"
 
-#: etc/options.php:115
-msgid "Give it a five stars on WordPress.org"
-msgstr "Ge det 5 stjärnor på WordPress.org"
-
-#: etc/options.php:113
-msgid "Below are some links to help spread this plugin to other users"
-msgstr "Nedan finns några länkar som hjälper till att sprida detta tillägg till andra användare"
-
-#: etc/options.php:96
-msgid "I love what I do!"
-msgstr "Jag älskar det jag gör!"
-
-#: etc/options.php:90 etc/options.php:129
-msgid "We are waiting for your message"
-msgstr "Vi ser fram emot ditt meddelande"
-
-#: etc/options.php:12
-msgid "Revisions configuration"
-msgstr "Versionskonfiguration"
-
-#: includes/iworks/options/options.php:1856
-msgid "ON"
-msgstr "PÅ"
-
-#: includes/iworks/options/options.php:1855
-msgid "OFF"
-msgstr "AV"
-
-#: includes/iworks/options/options.php:1699
-msgid "ZIP code"
-msgstr "Postnummer"
-
-#: includes/iworks/options/options.php:1698
-msgid "Street"
-msgstr "Gata"
-
-#: includes/iworks/options/options.php:1697
-msgid "City"
-msgstr "Ort"
-
-#: includes/iworks/options/options.php:1696
-msgid "Country"
-msgstr "Land"
-
-#: includes/iworks/options/options.php:862
-msgid "Save Changes"
-msgstr "Spara ändringarna"
-
-#: includes/iworks/options/options.php:774
-msgid "Delete image"
-msgstr "Ta bort bild"
-
-#: includes/iworks/options/options.php:258
-msgid "An error occurred while getting the configuration."
-msgstr "Ett fel uppstod när konfigurationen hämtades."
-
 #: etc/options.php:131
-msgid "WordPress Help Forum"
-msgstr "WordPress hjälpforum"
+msgctxt "link to support forum on WordPress.org"
+msgid "https://wordpress.org/support/plugin/simple-revision-control/"
+msgstr "https://wordpress.org/support/plugin/simple-revision-control/"
 
-#: etc/options.php:13 etc/options.php:22
-msgid "Revisions"
-msgstr "Versioner"
+#. translators: %s: plugin slug
+#: includes/iworks/rate/rate.php:469
+msgctxt "plugins home"
+msgid "https://wordpress.org/plugins/%s"
+msgstr "https://wordpress.org/plugins/%s"
 
-#: includes/iworks/rate/rate.php:133
-#: includes/iworks/simple-revision-control/class-simple-revision-control.php:121
-msgid "Settings"
-msgstr "Inställningar"
+#. translators: %s: plugin slug
+#: includes/iworks/rate/rate.php:476
+msgctxt "plugins support home"
+msgid "https://wordpress.org/support/plugin/%s"
+msgstr "https://wordpress.org/support/plugin/%s"
 
-#: etc/options.php:54
-msgid "Page"
-msgstr "Sida"
+#~ msgid "http://iworks.pl/en/plugins/fleet/"
+#~ msgstr "http://iworks.pl/en/plugins/fleet/"
 
-#: etc/options.php:27
-msgid "Post"
-msgstr "Inlägg"
+#~ msgid "http://iworks.pl/"
+#~ msgstr "http://iworks.pl/"
 
-#. Author URI of the plugin
-msgid "http://iworks.pl/"
-msgstr "http://iworks.pl/"
+#~ msgid "Marcin Pietrzak"
+#~ msgstr "Marcin Pietrzak"
 
-#. Author of the plugin
-msgid "Marcin Pietrzak"
-msgstr "Marcin Pietrzak"
-
-#. Description of the plugin
-msgid "Simple Revision Control is a plugin which gives the user simple control over the Revision functionality."
-msgstr "Simple Revision Control är ett tillägg som ger användaren enkel kontroll över versionsfunktionen."
-
-#. Plugin Name of the plugin
-#: simple-revision-control.php:111
-msgid "Simple Revision Control"
-msgstr "Simple Revision Control"
+#~ msgid ""
+#~ "Simple Revision Control is a plugin which gives the user simple control "
+#~ "over the Revision functionality."
+#~ msgstr ""
+#~ "Simple Revision Control är ett tillägg som ger användaren enkel kontroll "
+#~ "över versionsfunktionen."

@@ -54,6 +54,7 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 		/**
 		 * WordPress Hooks
 		 */
+		add_action( 'init', array( $this, 'action_init_register_iworks_rate' ), PHP_INT_MAX );
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_notices', array( $this, 'action_maybe_show_notice_after_delete_revisions' ) );
 		add_action( 'init', array( $this, 'change_post_type_revision_support' ), PHP_INT_MAX );
@@ -72,6 +73,14 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 		 * iWorks Rate Class
 		 */
 		add_filter( 'iworks_rate_notice_logo_style', array( $this, 'filter_plugin_logo' ), 10, 2 );
+		/**
+		 * load github class
+		 */
+		$filename = __DIR__ . '/class-simple-revision-control-github.php';
+		if ( is_file( $filename ) ) {
+			include_once $filename;
+			new iworks_simple_revision_control_github();
+		}
 	}
 
 	/**
@@ -135,7 +144,7 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 			$plugin = (array) $plugin;
 		}
 		if ( 'simple-revision-control' === $plugin['slug'] ) {
-			return plugin_dir_url( dirname( dirname( __FILE__ ) ) ) . '/assets/images/logo.svg';
+			return plugin_dir_url( $this->base  ) . 'assets/images/logo.svg';
 		}
 		return $logo;
 	}
@@ -287,6 +296,7 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 							'<td>%s</td>',
 							esc_html(
 								sprintf(
+									/* translators: %d number of entries */
 									_n(
 										'This post type does not supports revisions, but there is one entry with revisions.',
 										'This post type does not supports revisions, but there are %d entries with revisions.',
@@ -311,6 +321,7 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 							'<td><span class="wp-ui-text-notification">%s</span></td>',
 							esc_html(
 								sprintf(
+									 /* translators: %1$s number of revisions, %2$s number of entries */
 									_n(
 										'There is %2$s with more than one revision.',
 										'There is %2$s with more than %1$d revisions.',
@@ -319,6 +330,7 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 									),
 									$one['limit'],
 									sprintf(
+										/* translators: %1$s number of entries */
 										_n(
 											'one entry',
 											'%d entries',
@@ -341,6 +353,7 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 							'<td colspan="2">%s</td>',
 							esc_html(
 								sprintf(
+									/* translators: %1$s number of revisions */
 									_n(
 										'There is no entries with more than one revision.',
 										'There is no entries with more than %1$d revisions.',
@@ -474,7 +487,7 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 		if ( ! isset( $_POST['_wpnonce'] ) ) {
 			wp_send_json_error();
 		}
-		$post_type = $_POST['posttype'];
+		$post_type = filter_input( INPUT_POST, 'posttype' );
 		if ( ! wp_verify_nonce( $_POST['_wpnonce'], $post_type ) ) {
 			wp_send_json_error();
 		}
@@ -600,8 +613,10 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 		}
 		$post_id = filter_input( INPUT_GET, 'post_id', FILTER_VALIDATE_INT );
 		$count   = filter_input( INPUT_GET, 'count', FILTER_VALIDATE_INT );
+		/* translators: %1$s number of deleted revisions */
 		$message = __( 'All revisions of "%1$s" was successful deleted.', 'simple-revision-control' );
 		if ( 0 < $count ) {
+			/* translators: %1$s number of all revisions, %2$d - numnber of deleted revisions */
 			$message = _n(
 				'%2$d revision of "%1$s" was successful deleted',
 				'%2$d revisions of "%1$s" was successful deleted',
@@ -620,5 +635,21 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 		echo '</div>';
 	}
 
+	/**
+	 * register plugin to iWorks Rate Helper
+	 *
+	 * @since 1.0.0
+	 */
+	public function action_init_register_iworks_rate() {
+		if ( ! class_exists( 'iworks_rate' ) ) {
+			include_once dirname( __DIR__ ) . '/rate/rate.php';
+		}
+		do_action(
+			'iworks-register-plugin',
+			plugin_basename( __FILE__ ),
+			__( 'Simple Revision Control', 'simple-revision-control' ),
+			'simple-revision-control'
+		);
+	}
 }
 
