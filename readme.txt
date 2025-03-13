@@ -22,6 +22,10 @@ Simple Revision Control is a plugin for WordPress which gives the user simple co
 
 [My Filing Cabinet](http://www.flickr.com/photos/theenmoy/8078124630/) by [Theen Moy](http://www.flickr.com/photos/theenmoy/) Creative Common
 
+= GitHub =
+
+The Simple Revision Control plugin is available also on [GitHub - Orphans](https://github.com/iworks/simple-revision-control).
+
 == Installation ==
 
 1. Upload Simple Revision Control to your plugins directory.
