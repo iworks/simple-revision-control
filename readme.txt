@@ -46,19 +46,22 @@ You can set up a number of revisions by post type. Setting in `wp-config.php` fi
 
 == Changelog ==
 
+= 2.2.2 (2025-03-13) =
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.9.8.
+
 = 2.2.1 (2025-02-21) =
 * The build process has been improved.
-* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.2.3.
-* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.9.5.
+* Updated the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.2.3.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.9.5.
 
 = 2.2.0 (2024-02-15) =
 * The security of deleting previous versions has been improved, normal entries should not be deleted from now on.
-* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.1.6.
-* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.9.1.
+* Updated the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.1.6.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.9.1.
 
 = 2.1.3 (2023-11-20) =
-* The [iWorks Rate](https://github.com/iworks/iworks-rate) module has been updated to 2.1.3.
-* The [iWorks Options](https://github.com/iworks/wordpress-options-class) module has been updated to 2.8.8.
+* Updated the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.1.3.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.8.8.
 
 = 2.1.2 (2022-04-07) =
 * Fixed settings link on plugins page. Props for [tanohex](https://wordpress.org/support/users/tanohex/).
@@ -71,16 +74,16 @@ You can set up a number of revisions by post type. Setting in `wp-config.php` fi
 * Added ability to turn on revisions for post types without revisions.
 * Added filter `iworks_plugin_get_options` to allow to change plugin base configuration.
 * Improved UX on configuration screen.
-* Updated iWorks Options to 2.8.1.
-* Updated iWorks Rate to 2.1.0.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.8.1.
+* Updated the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.1.0.
 
 = 2.0.0 (2022-02-02) =
 - Refactored whole plugin.
-* Updated iWorks Options to 2.8.0.
-* Updated iWorks Rate to 2.0.6.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.8.0.
+* Updated the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.0.6.
 
 = 1.3.4 (2021-06-16) =
-* Updated iWorks Options to 2.6.9.
+* Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 2.6.9.
 
 = 1.3.3 (2017-05-19) =
 * Fixed translation incompatibility.
