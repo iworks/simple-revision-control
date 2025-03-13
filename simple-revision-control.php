@@ -5,7 +5,7 @@
  * @package           PLUGIN_NAME
  * @author            AUTHOR_NAME
  * @copyright         2013-PLUGIN_TILL_YEAR Marcin Pietrzak (marcin@iworks.pl)
- * @license           GPL-2.0-or-later
+ * @license           GPL-3.0-or-later
  *
  * @wordpress-plugin
  * Plugin Name:       Simple Revision Control
@@ -17,14 +17,24 @@
  * Author:            AUTHOR_NAME
  * Author URI:        AUTHOR_URI
  * Text Domain:       simple-revision-control
- * License:           GPL v2 or later
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           GPLv3 or later
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
+
+this program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License, version 2, as
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
  */
-
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
-
+defined( 'ABSPATH' ) || exit; // Exit if accessed directly
 /**
  * static options
  */

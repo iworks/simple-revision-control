@@ -1,6 +1,6 @@
-/*! Simple Revision Control - 2.2.1
+/*! Simple Revision Control - 2.2.2
  * http://iworks.pl/en/plugins/simple-revision-control/
- * Copyright (c) 2025;
+ * Copyright (c) 2025
  * Licensed GPL-3.0 */
 jQuery(document).ready(function($) {
     $('#simple_revision_control_admin_index .delete').on('click', function(e) {

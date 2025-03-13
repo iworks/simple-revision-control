@@ -115,6 +115,9 @@ module.exports = function(grunt) {
 			match: /PLUGIN_TAGLINE/g,
 			replace: '<%= pkg.tagline %>'
 		}, {
+			match: /PLUGIN_TAGS/g,
+			replace: '<%= pkg.tags.join(", ") %>'
+		}, {
 			match: /PLUGIN_TILL_YEAR/g,
 			replace: buildyear
 		}, {
@@ -137,6 +140,7 @@ module.exports = function(grunt) {
 		// Regex patterns to exclude from transation.
 		translation: {
 			ignore_files: [
+				'README.md',
 				'.git*',
 				'includes/external/.*', // External libraries.
 				'node_modules/.*',
@@ -161,7 +165,7 @@ module.exports = function(grunt) {
 				stripBanners: true,
 				banner: '/*! <%= pkg.title %> - <%= pkg.version %>\n' +
 				' * <%= pkg.homepage %>\n' +
-				' * Copyright (c) <%= grunt.template.today("yyyy") %>;\n' +
+				' * Copyright (c) <%= grunt.template.today("yyyy") %>\n' +
 				' * Licensed <%= pkg.license %>' +
 				' */\n'
 			},
@@ -337,6 +341,7 @@ module.exports = function(grunt) {
 						'report-msgid-bugs-to': 'http://iworks.pl',
 						'x-poedit-keywordslist': true // Include a list of all possible gettext functions.
 					},
+					exclude: ['node_modules', '.git', '.sass-cache', 'release'],
 					type: 'wp-plugin',
 					updateTimestamp: true,
 					updatePoFiles: true
@@ -440,7 +445,6 @@ module.exports = function(grunt) {
 				expand: true,
 			},
 		},
-
 	});
 
 	grunt.registerTask('notes', 'Show release notes', function() {
@@ -473,7 +477,7 @@ module.exports = function(grunt) {
 			'copy:wporg',
 			'replace',
 			'compress:wporg'
-		]
+		],
 	);
 	grunt.registerTask(
 		'build:github',

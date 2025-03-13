@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - Simple Revision Control - Development (trunk)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2025-02-22 15:20:31+00:00\n"
+"POT-Creation-Date: 2025-03-13 16:54:48+00:00\n"
 "PO-Revision-Date: 2024-04-15 05:16:20+0000\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -81,44 +81,44 @@ msgstr "Forum Pomocy WordPressa"
 msgid "An error occurred while getting the configuration."
 msgstr "Wystąpił błąd przy pobieraniu konfiguracji."
 
-#: includes/iworks/options/options.php:816
-#: includes/iworks/options/options.php:1910
+#: includes/iworks/options/options.php:842
+#: includes/iworks/options/options.php:1950
 msgid "Select Image"
 msgstr "Wybierz obrazek"
 
-#: includes/iworks/options/options.php:821
+#: includes/iworks/options/options.php:847
 msgid "Delete image"
 msgstr "Usuń obrazek"
 
-#: includes/iworks/options/options.php:927
+#: includes/iworks/options/options.php:955
 msgid "Save Changes"
 msgstr "Zapisz zmiany"
 
-#: includes/iworks/options/options.php:1804
+#: includes/iworks/options/options.php:1844
 msgid "Country"
 msgstr "Kraj"
 
-#: includes/iworks/options/options.php:1805
+#: includes/iworks/options/options.php:1845
 msgid "City"
 msgstr "Miejscowość"
 
-#: includes/iworks/options/options.php:1806
+#: includes/iworks/options/options.php:1846
 msgid "Street"
 msgstr "Ulica"
 
-#: includes/iworks/options/options.php:1807
+#: includes/iworks/options/options.php:1847
 msgid "ZIP code"
 msgstr "Kod pocztowy"
 
-#: includes/iworks/options/options.php:1963
+#: includes/iworks/options/options.php:2003
 msgid "OFF"
 msgstr "Wyłącz"
 
-#: includes/iworks/options/options.php:1964
+#: includes/iworks/options/options.php:2004
 msgid "ON"
 msgstr "WŁĄCZ"
 
-#: includes/iworks/options/options.php:2029
+#: includes/iworks/options/options.php:2069
 msgid "Failed Security Check"
 msgstr "Nieudana kontrola bezpieczeństwa"
 
