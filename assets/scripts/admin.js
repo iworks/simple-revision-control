@@ -1,4 +1,4 @@
-/*! Simple Revision Control - 2.2.2
+/*! Simple Revision Control - 2.2.3
  * http://iworks.pl/en/plugins/simple-revision-control/
  * Copyright (c) 2025
  * Licensed GPL-3.0 */

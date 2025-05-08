@@ -106,7 +106,7 @@ function simple_revision_control_options() {
 function simple_revision_control_options_loved_this_plugin( $iworks_iworks_seo_improvements ) {
 	$content = apply_filters( 'iworks_rate_love', '', 'simple-revision-control' );
 	if ( ! empty( $content ) ) {
-		echo $content;
+		echo wp_kses_post( $content );
 		return;
 	}
 	?>
@@ -121,7 +121,7 @@ function simple_revision_control_options_loved_this_plugin( $iworks_iworks_seo_i
 function simple_revision_control_options_need_assistance( $iworks_iworks_seo_improvementss ) {
 	$content = apply_filters( 'iworks_rate_assistance', '', 'simple-revision-control' );
 	if ( ! empty( $content ) ) {
-		echo $content;
+		echo wp_kses_post( $content );
 		return;
 	}
 

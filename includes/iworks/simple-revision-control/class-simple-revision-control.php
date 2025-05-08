@@ -96,7 +96,10 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 			'simple-revision-control-admin',
 			$file,
 			array( 'jquery' ),
-			$this->debug ? filemtime( $filepath ) : $this->version
+			$this->debug ? filemtime( $filepath ) : $this->version,
+			array(
+				'in_footer' => true
+			)
 		);
 	}
 
@@ -298,7 +301,7 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 								sprintf(
 									/* translators: %d number of entries */
 									_n(
-										'This post type does not supports revisions, but there is one entry with revisions.',
+										'This post type does not supports revisions, but there is %d entry with revisions.',
 										'This post type does not supports revisions, but there are %d entries with revisions.',
 										$one['extend'],
 										'simple-revision-control'
@@ -323,7 +326,7 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 								sprintf(
 									 /* translators: %1$s number of revisions, %2$s number of entries */
 									_n(
-										'There is %2$s with more than one revision.',
+										'There is %2$s with more than %1$d revision.',
 										'There is %2$s with more than %1$d revisions.',
 										$one['limit'],
 										'simple-revision-control'
@@ -332,7 +335,7 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 									sprintf(
 										/* translators: %1$s number of entries */
 										_n(
-											'one entry',
+											'%d entry',
 											'%d entries',
 											$one['extend'],
 											'simple-revision-control'
@@ -355,7 +358,7 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 								sprintf(
 									/* translators: %1$s number of revisions */
 									_n(
-										'There is no entries with more than one revision.',
+										'There is no entries with more than %1$d revision.',
 										'There is no entries with more than %1$d revisions.',
 										$one['limit'],
 										'simple-revision-control'
@@ -629,9 +632,11 @@ class iWorks_Simple_Revision_Control extends iWorks_Simple_Revision_Control_Base
 			$title = get_the_title( $post_id );
 		}
 		echo '<div class="notice notice-info">';
-		echo '<p>';
-		printf( $message, sprintf( '<strong>%s</strong>', $title ), $count );
-		echo '</p>';
+		echo wpautop(
+			wp_kses_post(
+				sprintf( $message, sprintf( '<strong>%s</strong>', esc_html( $title ) ), $count )
+			)
+		);;
 		echo '</div>';
 	}
 
