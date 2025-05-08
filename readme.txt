@@ -26,7 +26,7 @@ Simple Revision Control is a plugin for WordPress which gives the user simple co
 
 = GitHub =
 
-The Simple Revision Control plugin is available also on [GitHub - Orphans](https://github.com/iworks/simple-revision-control).
+The Simple Revision Control plugin is available also on [GitHub](https://github.com/iworks/simple-revision-control).
 
 == Installation ==
 
