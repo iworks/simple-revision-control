@@ -1,7 +1,7 @@
 === PLUGIN_TITLE ===
 Contributors: iworks
 Donate link: https://ko-fi.com/iworks?utm_source=simple-revision-control&utm_medium=readme-donate
-Tags: revision, revisions, post, page, custom post type
+Tags: PLUGIN_TAGS
 Requires at least: PLUGIN_REQUIRES_WORDPRESS
 Tested up to: PLUGIN_TESTED_WORDPRESS
 Stable tag: PLUGIN_VERSION
@@ -14,11 +14,18 @@ PLUGIN_TAGLINE
 
 PLUGIN_TAGLINE
 
-You can also delete all unwanted revisions at all.
 
-If you are able to edit `wp-config.php` file or you want to have only one number of revisions for all post types, then please consider do not install this plugin, instead just edit `wp-config.php` file.
+***Simple Revision Control*** is a WordPress plugin that provides an easy way to manage and limit the number of post revisions stored for each post type on your site. Unlike editing the wp-config.php file—which only allows setting a single revision limit for all post types—this plugin lets you specify a different revision limit for each post type individually. You can also enable or disable revision support per post type and delete unwanted revisions directly from the plugin’s settings.
 
-Simple Revision Control is a plugin for WordPress which gives the user simple control over the Revision functionality.
+= Key features =
+
+* Set custom revision limits for each post type, rather than a global limit.
+* Enable or disable revisions for post types that don’t support them by default.
+* Delete all unwanted revisions with a single click to keep your database clean.
+* Simple setup and configuration via the WordPress admin under Settings → Revisions.
+* No coding required—ideal for users who prefer not to edit wp-config.php.
+
+This plugin is especially useful for site owners who want granular control over revision storage to optimize database performance and avoid unnecessary clutter, without needing to modify core WordPress files.
 
 = Asset image =
 
@@ -51,6 +58,10 @@ You can set up a number of revisions by post type. Setting in `wp-config.php` fi
 1. Entries list screen with ability to delete revisions by element.
 
 == Changelog ==
+
+= 2.2.4 - 2025-07-10 =
+* **Dependencies**: Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 3.0.7 and the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.3.1.
+
 
 = 2.2.3 (2025-05-08) =
 * Added escaping functions in multiple areas for improved security.
