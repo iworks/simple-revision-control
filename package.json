@@ -1,11 +1,16 @@
 {
     "name": "simple-revision-control",
     "title": "Simple Revision Control",
-    "tagline": "Manage post types revisions.",
+    "tagline": "Easily control and limit post revisions per post type to keep your WordPress database clean and optimized—no coding required!",
     "description": "Simple Revision Control is a plugin which gives the user simple control over the Revision functionality.",
-    "version": "2.2.3",
+    "version": "2.2.4",
     "homepage": "http://iworks.pl/en/plugins/simple-revision-control/",
     "tags": [
+        "custom post type",
+        "page",
+        "post",
+        "revision",
+        "revisions"
     ],
     "author": [
         {
