@@ -59,9 +59,11 @@ You can set up a number of revisions by post type. Setting in `wp-config.php` fi
 
 == Changelog ==
 
+= 2.2.5 - 2026-07-17 =
+* **Dependencies**: Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 3.1.1 and the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.3.2.
+
 = 2.2.4 - 2025-07-10 =
 * **Dependencies**: Updated the [iWorks Options](https://github.com/iworks/wordpress-options-class) module to version 3.0.7 and the [iWorks Rate](https://github.com/iworks/iworks-rate) module to version 2.3.1.
-
 
 = 2.2.3 (2025-05-08) =
 * Added escaping functions in multiple areas for improved security.
