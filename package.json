@@ -3,7 +3,7 @@
     "title": "Simple Revision Control",
     "tagline": "Easily control and limit post revisions per post type to keep your WordPress database clean and optimized—no coding required!",
     "description": "Simple Revision Control is a plugin which gives the user simple control over the Revision functionality.",
-    "version": "2.2.4",
+    "version": "2.2.5",
     "homepage": "http://iworks.pl/en/plugins/simple-revision-control/",
     "tags": [
         "custom post type",
@@ -28,7 +28,7 @@
         "PHP": "8.0"
     },
     "tested": {
-        "WordPress": "6.8"
+        "WordPress": "7.0"
     },
     "devDependencies": {
         "grunt": "^1",
