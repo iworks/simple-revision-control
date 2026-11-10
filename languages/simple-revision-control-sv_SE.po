@@ -1,16 +1,15 @@
-# Translation of Plugins - Simple Revision Control - Stable (latest release) in Swedish
-# This file is distributed under the same license as the Plugins - Simple Revision Control - Stable (latest release) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Plugins - Simple Revision Control - Stable (latest "
-"release)\n"
+"Project-Id-Version: Plugins - Simple Revision Control - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: http://iworks.pl\n"
-"POT-Creation-Date: 2026-07-24 05:17:11+00:00\n"
-"PO-Revision-Date: 2025-05-08 15:45:17+0000\n"
-"Language: sv_SE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-07-24 05:17:11+00:00\n"
+"PO-Revision-Date: 2025-05-08 15:45:17+0000\n"
+"Language: sv_SE\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/4.0.3\n"
 
@@ -18,7 +17,8 @@ msgstr ""
 msgid "Revisions configuration"
 msgstr "Versionskonfiguration"
 
-#: etc/options.php:13 etc/options.php:22
+#: etc/options.php:13
+#: etc/options.php:22
 msgid "Revisions"
 msgstr "Versioner"
 
@@ -26,17 +26,20 @@ msgstr "Versioner"
 msgid "Post"
 msgstr "Inlägg"
 
-#: etc/options.php:31 etc/options.php:58
+#: etc/options.php:31
+#: etc/options.php:58
 #: includes/iworks/simple-revision-control/class-simple-revision-control.php:182
 msgid "Unlimited revisions"
 msgstr "Obegränsat antal versioner"
 
-#: etc/options.php:34 etc/options.php:61
+#: etc/options.php:34
+#: etc/options.php:61
 #: includes/iworks/simple-revision-control/class-simple-revision-control.php:185
 msgid "No revisions"
 msgstr "Inga versioner"
 
-#: etc/options.php:37 etc/options.php:64
+#: etc/options.php:37
+#: etc/options.php:64
 #: includes/iworks/simple-revision-control/class-simple-revision-control.php:188
 msgid "Custom number of revisions"
 msgstr "Anpassat antal versioner"
@@ -53,7 +56,8 @@ msgstr "Information och verktyg"
 msgid "Data"
 msgstr "Data"
 
-#: etc/options.php:90 etc/options.php:129
+#: etc/options.php:90
+#: etc/options.php:129
 msgid "We are waiting for your message"
 msgstr "Vi ser fram emot ditt meddelande"
 
@@ -63,9 +67,7 @@ msgstr "Jag älskar det jag gör!"
 
 #: etc/options.php:113
 msgid "Below are some links to help spread this plugin to other users"
-msgstr ""
-"Nedan finns några länkar som hjälper till att sprida detta tillägg till "
-"andra användare"
+msgstr "Nedan finns några länkar som hjälper till att sprida detta tillägg till andra användare"
 
 #: etc/options.php:115
 msgid "Give it a five stars on WordPress.org"
@@ -80,14 +82,12 @@ msgid "WordPress Help Forum"
 msgstr "WordPress hjälpforum"
 
 #: includes/iworks/options/includes/class-iworks-options-logger.php:99
-msgid ""
-"Option \"{option_name}\" has been updated. From \"{old_value}\" to "
-"\"{new_value}\"."
-msgstr ""
+msgid "Option \"{option_name}\" has been updated. From \"{old_value}\" to \"{new_value}\"."
+msgstr "Wartość opcji „{option_name}” została zmieniona z „{old_value}” na „{new_value}”."
 
 #: includes/iworks/options/options.php:247
 msgid "No Page Title"
-msgstr ""
+msgstr "Brak tytułu strony"
 
 #: includes/iworks/options/options.php:419
 msgid "An error occurred while getting the configuration."
@@ -132,7 +132,7 @@ msgstr "PÅ"
 
 #: includes/iworks/options/options.php:2514
 msgid "Failed Security Check"
-msgstr ""
+msgstr "Nieudana kontrola bezpieczeństwa"
 
 #: includes/iworks/rate/rate.php:159
 #: includes/iworks/simple-revision-control/class-simple-revision-control.php:133
@@ -164,38 +164,31 @@ msgstr "https://wordpress.org/plugins/og/"
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:19
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:21
 msgid "🎉 Happy Anniversary! 🎉"
-msgstr ""
+msgstr "🎉 Wszystkiego najlepszego z okazji rocznicy! 🎉"
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:21
-msgid ""
-"Wow, it’s already been a whole year since you’ve been using our plugin—thank "
-"you so much for being part of our journey! We truly appreciate your support "
-"and hope the plugin has made your work easier and more enjoyable."
-msgstr ""
+msgid "Wow, it’s already been a whole year since you’ve been using our plugin—thank you so much for being part of our journey! We truly appreciate your support and hope the plugin has made your work easier and more enjoyable."
+msgstr "Wow, minął już cały rok odkąd używasz naszej wtyczki — bardzo dziękujemy za bycie częścią naszej wspólnej przygody! Naprawdę doceniam Twoje wsparcie i mam nadzieję, że wtyczka ułatwiła Ci pracę i uczyniła ją przyjemniejszą."
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:22
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:24
-msgid ""
-"If you’ve found our plugin helpful and would like to support its continued "
-"development, we’d be incredibly grateful if you’d consider buying us a "
-"coffee. Every little bit helps us keep improving and adding new features for "
-"awesome users like you!"
-msgstr ""
+msgid "If you’ve found our plugin helpful and would like to support its continued development, we’d be incredibly grateful if you’d consider buying us a coffee. Every little bit helps us keep improving and adding new features for awesome users like you!"
+msgstr "Jeśli nasza wtyczka okazała się pomocna i chcesz wesprzeć jej dalszy rozwój, byłbym niezmiernie wdzięczny, gdybyś rozważyła lub rozważył postawienie mi kawy. Każda odrobina pomaga nam w ciągłym doskonaleniu i dodawaniu nowych funkcji dla wspaniałych użytkowników, takich jak Ty!"
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:23
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:25
 msgid "☕ Buy Me a Coffee"
-msgstr ""
+msgstr "☕ Kup mi kawę"
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:24
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:26
 msgid "Thank you for your support and for making this community amazing!"
-msgstr ""
+msgstr "Dziękuję za Twoje wsparcie i za to, że tworzysz niesamowitą społeczność!"
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:28
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:30
 msgid "With gratitude"
-msgstr ""
+msgstr "Z wdzięcznością"
 
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:32
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:34
@@ -205,18 +198,15 @@ msgstr "Marcin Pietrzak"
 #: includes/iworks/rate/templates/happy-anniversary/anniversary.php:34
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:36
 msgid "Plugin Author"
-msgstr ""
+msgstr "Autor wtyczki"
 
 #: includes/iworks/rate/templates/happy-anniversary/first-year.php:23
-msgid ""
-"Wow, it’s already been a whole year since you started using our plugin—thank "
-"you so much for being part of our journey! We hope it’s made your work "
-"easier and more enjoyable."
-msgstr ""
+msgid "Wow, it’s already been a whole year since you started using our plugin—thank you so much for being part of our journey! We hope it’s made your work easier and more enjoyable."
+msgstr "Wow, minął już cały rok odkąd używasz naszej wtyczki — bardzo dziękujemy za bycie częścią naszej wspólnej przygody! Mam nadzieję, że wtyczka ułatwiła Twoją pracę i uczyniła ją przyjemniejszą."
 
 #: includes/iworks/rate/templates/plugins/og.php:4
 msgid "Would you like to boost your website sharing abilities?"
-msgstr ""
+msgstr "Chcesz zwiększyć możliwości dzielenia się witryną?"
 
 #. translators: %s is a plugin name with url
 #: includes/iworks/rate/templates/plugins/og.php:9
@@ -235,18 +225,8 @@ msgstr "Tack för att du använder vårt tillägg %s!"
 
 #. translators: %1$s: open anchor tag, %2$s: close anchor tag
 #: includes/iworks/rate/templates/thanks.php:31
-msgid ""
-"Please let us know what you think about our plugin. It is important that we "
-"can develop this tool. Thank you for all the ratings, reviews and donates. "
-"If you have a technical problem, please before you add a review %1$scheck "
-"our FAQ%2$s or contact us if you did not find help there. We will try to "
-"help you!"
-msgstr ""
-"Berätta vad du tycker om vårt tillägg. Det är viktigt och hjälper oss så att "
-"vi kan utveckla detta verktyg. Tack för alla betyg, recensioner och "
-"donationer. Om du har ett tekniskt problem och innan du lägger till en "
-"recension %1$skolla in våra vanliga frågor%2$s eller kontakta oss om du inte "
-"hittade hjälp där. Vi ska försöka hjälpa dig!"
+msgid "Please let us know what you think about our plugin. It is important that we can develop this tool. Thank you for all the ratings, reviews and donates. If you have a technical problem, please before you add a review %1$scheck our FAQ%2$s or contact us if you did not find help there. We will try to help you!"
+msgstr "Berätta vad du tycker om vårt tillägg. Det är viktigt och hjälper oss så att vi kan utveckla detta verktyg. Tack för alla betyg, recensioner och donationer. Om du har ett tekniskt problem och innan du lägger till en recension %1$skolla in våra vanliga frågor%2$s eller kontakta oss om du inte hittade hjälp där. Vi ska försöka hjälpa dig!"
 
 #: includes/iworks/rate/templates/thanks.php:35
 #: includes/iworks/rate/templates/widgets/support.php:21
@@ -263,54 +243,30 @@ msgid "I added review, do not show again"
 msgstr "Jag har redan skrivit en recension, visa inte igen"
 
 #: includes/iworks/rate/templates/widgets/donate.php:2
-msgid ""
-"However, working on plugins and technical support requires many hours of "
-"work. If you want to appreciate it, you can provide me a coffee."
-msgstr ""
-"Att arbeta med tillägg och teknisk support kräver många timmars arbete. Om "
-"du vill visa din uppskattning kan du köpa en kopp kaffe till mig."
+msgid "However, working on plugins and technical support requires many hours of work. If you want to appreciate it, you can provide me a coffee."
+msgstr "Att arbeta med tillägg och teknisk support kräver många timmars arbete. Om du vill visa din uppskattning kan du köpa en kopp kaffe till mig."
 
 #: includes/iworks/rate/templates/widgets/donate.php:3
-msgid ""
-"If every plugin user did it, I could devote myself fully to working on this "
-"plugin. Thanks everyone!"
-msgstr ""
+msgid "If every plugin user did it, I could devote myself fully to working on this plugin. Thanks everyone!"
+msgstr "Gdyby każdy użytkownik wtyczki to zrobił, to mógłbym poświęcić cały swój czas pracy nad wtyczką. Dziękuję każdemu!"
 
 #: includes/iworks/rate/templates/widgets/donate.php:4
 msgid "Provide me a coffee"
 msgstr "Köp en kopp kaffe till mig"
 
 #: includes/iworks/rate/templates/widgets/support.php:4
-msgid ""
-"Do you have a technical problem? Please contact us. We will be happy to help "
-"you. Or maybe you have an idea for a new feature? Please let us know about "
-"it by filling the support form. We will try to add it!"
-msgstr ""
-"Har du ett tekniskt problem? Kontakta oss. Vi hjälper dig gärna. Eller "
-"kanske du har en idé om en ny funktion? Berätta det genom att fylla i "
-"supportformuläret. Vi kommer att försöka lägga till det!"
+msgid "Do you have a technical problem? Please contact us. We will be happy to help you. Or maybe you have an idea for a new feature? Please let us know about it by filling the support form. We will try to add it!"
+msgstr "Har du ett tekniskt problem? Kontakta oss. Vi hjälper dig gärna. Eller kanske du har en idé om en ny funktion? Berätta det genom att fylla i supportformuläret. Vi kommer att försöka lägga till det!"
 
 #. translators: %1$s: open anchor tag, %2$s: close anchor tag, %3$s: open
 #. anchor tag, %4$s: close anchor tag
 #: includes/iworks/rate/templates/widgets/support.php:11
-msgid ""
-"Please %1$scheck our FAQ%2$s before adding a thread with technical problem. "
-"If you do not find help there, %3$scheck support forum%4$s for similar "
-"problems."
-msgstr ""
-"%1$sKolla in våra vanliga frågor%2$s innan du lägger till en tråd med "
-"tekniskt problem. Om du inte hittar hjälp där, %3$skolla in "
-"supportforumet%4$s för liknande problem."
+msgid "Please %1$scheck our FAQ%2$s before adding a thread with technical problem. If you do not find help there, %3$scheck support forum%4$s for similar problems."
+msgstr "%1$sKolla in våra vanliga frågor%2$s innan du lägger till en tråd med tekniskt problem. Om du inte hittar hjälp där, %3$skolla in supportforumet%4$s för liknande problem."
 
 #: includes/iworks/rate/templates/widgets/support.php:26
-msgid ""
-"Do you like our plugin? Could you rate him? Please let us know what you "
-"think about our plugin. It is important that we can develop this tool. Thank "
-"you for all the ratings, reviews and donates."
-msgstr ""
-"Gillar du vårt tillägg? Kan du betygsätta det? Berätta för oss vad du tycker "
-"om vårt tillägg. Det är viktigt att vi kan utveckla detta verktyg. Tack för "
-"alla betyg, recensioner och donationer."
+msgid "Do you like our plugin? Could you rate him? Please let us know what you think about our plugin. It is important that we can develop this tool. Thank you for all the ratings, reviews and donates."
+msgstr "Gillar du vårt tillägg? Kan du betygsätta det? Berätta för oss vad du tycker om vårt tillägg. Det är viktigt att vi kan utveckla detta verktyg. Tack för alla betyg, recensioner och donationer."
 
 #: includes/iworks/simple-revision-control/class-simple-revision-control.php:279
 msgid "Post type name"
@@ -330,13 +286,9 @@ msgstr "Denna inläggstyp stöder inte versioner."
 
 #. translators: %d number of entries
 #: includes/iworks/simple-revision-control/class-simple-revision-control.php:303
-msgid ""
-"This post type does not supports revisions, but there is %d entry with "
-"revisions."
-msgid_plural ""
-"This post type does not supports revisions, but there are %d entries with "
-"revisions."
-msgstr[0] ""
+msgid "This post type does not supports revisions, but there is %d entry with revisions."
+msgid_plural "This post type does not supports revisions, but there are %d entries with revisions."
+msgstr[0] "Typ treści nie obsługuje wersji, ale jest %d element z wersjami."
 msgstr[1] ""
 
 #: includes/iworks/simple-revision-control/class-simple-revision-control.php:317
@@ -350,21 +302,21 @@ msgstr "Ta bort versioner"
 #: includes/iworks/simple-revision-control/class-simple-revision-control.php:328
 msgid "There is %2$s with more than %1$d revision."
 msgid_plural "There is %2$s with more than %1$d revisions."
-msgstr[0] ""
+msgstr[0] "Istnieje %2$s z więcej niż %1$d wersją."
 msgstr[1] ""
 
 #. translators: %1$s number of entries
 #: includes/iworks/simple-revision-control/class-simple-revision-control.php:337
 msgid "%d entry"
 msgid_plural "%d entries"
-msgstr[0] ""
+msgstr[0] "%d wpis"
 msgstr[1] ""
 
 #. translators: %1$s number of revisions
 #: includes/iworks/simple-revision-control/class-simple-revision-control.php:360
 msgid "There is no entries with more than %1$d revision."
 msgid_plural "There is no entries with more than %1$d revisions."
-msgstr[0] ""
+msgstr[0] "Brak treści z więcej niż %1$d wersją."
 msgstr[1] ""
 
 #: includes/iworks/simple-revision-control/class-simple-revision-control.php:375
@@ -441,9 +393,5 @@ msgstr "https://wordpress.org/support/plugin/%s"
 #~ msgid "http://iworks.pl/"
 #~ msgstr "http://iworks.pl/"
 
-#~ msgid ""
-#~ "Simple Revision Control is a plugin which gives the user simple control "
-#~ "over the Revision functionality."
-#~ msgstr ""
-#~ "Simple Revision Control är ett tillägg som ger användaren enkel kontroll "
-#~ "över versionsfunktionen."
+#~ msgid "Simple Revision Control is a plugin which gives the user simple control over the Revision functionality."
+#~ msgstr "Simple Revision Control är ett tillägg som ger användaren enkel kontroll över versionsfunktionen."
